@@ -1,0 +1,807 @@
+<diagram program="umlet" version="14.3.0">
+  <help_text>fontsize=11</help_text>
+  <zoom_level>10</zoom_level>
+  <element><id>UMLClass</id><panel_attributes>*/TulleObjekt/*
+-
+--&gt; IdentifiableArtefact
+-
+representedVariable: link: (RepresentedVariable)
+population: link: (Population)
+dataStructureComponentType: string(enum)
+  - IDENTIFIER, MEASURE, ATTRIBUTE
+shortName: string
+sentinelValueDomain?: link: (EnumeratedValueDomain, DescribedValueDomain)
+format?: string
+identifierComponentIsUnique?: boolean
+identifierComponentIsComposite?: boolean
+dataStructureComponentRole?: string(enum)
+  - ENTITY, IDENTITY, COUNT, TIME, GEO
+geoType?: string(enum)
+  - POINT, POLYGON, LINE
+</panel_attributes><additional_attributes /><coordinates><x>10</x><y>10</y><w>250</w><h>100</h></coordinates></element><element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/AdministrativeDetails/*
+-
+--&gt; object
+-
+administrativeDetailType: string(enum)
+  - DEFAULTLANGUAGE, ANNOTATION, ALIAS, URL, DOCUMENTATION, LIFECYCLESTATUS, LOCALID
+values: string[]
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>260</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/DataResource/*
+-
+--&gt; IdentifiableArtefact
+--&gt; InformationResource
+-
+dataResourceType?: string(enum)
+  - STATISTICAL_REGISTER_PERSONS, ETABLISHMENT_ENTERPRISE_REGISTER
+dataSets?: link[]: (UnitDataSet, DimensionalDataSet)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>180</y>
+      <w>270</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+DataResource_UnitDataSet, DimensionalDataSet
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/DataSet/*
+-
+-
+dataSetState: string(enum)
+  - RAW_DATA, INPUT_DATA, PROCESSED_DATA, OUTPUT_DATA, DATA_PRODUCT, OTHER_DATA
+temporalityType?: string(enum)
+  - EVENT, STATUS, ACCUMULATED, FIXED
+dataExistsFromDate?: datetime
+dataExistsUntilDate?: datetime
+dataSourcePath?: string
+metadataSourcePath?: string
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/DataStructure/*
+-
+-
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1040</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/DescribedValueDomain/*
+-
+--&gt; IdentifiableArtefact
+--&gt; ValueDomain
+-
+minValue?: number
+maxValue?: number
+minLength?: number
+maxLength?: number
+minDecimals?: number
+maxDecimals?: number
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1300</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/DimensionalDataSet/*
+-
+--&gt; IdentifiableArtefact
+--&gt; DataSet
+-
+dimensionalDataStructure: link: (DimensionalDataStructure)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>240</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+DimensionalDataSet_DimensionalDataStructure
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1560</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/DimensionalDataStructure/*
+-
+--&gt; IdentifiableArtefact
+--&gt; DataStructure
+-
+instanceVariables: link[]: (InstanceVariable)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>300</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+DimensionalDataStructure_InstanceVariable
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1820</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/EnumeratedValueDomain/*
+-
+--&gt; IdentifiableArtefact
+--&gt; ValueDomain
+-
+klassUrl: string
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2080</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/IdentifiableArtefact/*
+-
+-
+id: string
+name: MultilingualText.MultilingualText[]
+description?: MultilingualText.MultilingualText[]
+administrativeStatus?: string(enum)
+  - DRAFT, INTERNAL, OPEN, DEPRECATED
+createdDate: datetime
+createdBy: string
+version?: string
+versionValidFrom: datetime
+versionRationale?: MultilingualText.MultilingualText[]
+lastUpdatedDate?: datetime
+lastUpdatedBy?: string
+validFrom: datetime
+validUntil?: datetime
+administrativeDetails?: AdministrativeDetails.AdministrativeDetails[]
+agentInRoles?: link[]: (AgentInRole)
+
+
+bg=orange
+lt=..</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>360</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+IdentifiableArtefact_AgentInRole
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2340</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/InstanceVariable/*
+-
+--&gt; IdentifiableArtefact
+-
+representedVariable: link: (RepresentedVariable)
+population: link: (Population)
+dataStructureComponentType: string(enum)
+  - IDENTIFIER, MEASURE, ATTRIBUTE
+shortName: string
+sentinelValueDomain?: link: (EnumeratedValueDomain, DescribedValueDomain)
+format?: string
+identifierComponentIsUnique?: boolean
+identifierComponentIsComposite?: boolean
+dataStructureComponentRole?: string(enum)
+  - ENTITY, IDENTITY, COUNT, TIME, GEO
+geoType?: string(enum)
+  - POINT, POLYGON, LINE
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>420</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+InstanceVariable_RepresentedVariable
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>480</y>
+      <w>170</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+InstanceVariable_Population
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>540</y>
+      <w>360</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+InstanceVariable_EnumeratedValueDomain, DescribedValueDomain
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2600</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/InstanceVariableRelationship/*
+-
+--&gt; IdentifiableArtefact
+-
+relationType: string(enum)
+  - PARENT, CHILD, SIBLING, UNKNOWN
+sourceComponents: link[]: (InstanceVariable)
+targetComponents: link[]: (InstanceVariable)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>600</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+InstanceVariableRelationship_InstanceVariable
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>660</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+InstanceVariableRelationship_InstanceVariable
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2860</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/LogicalRecord/*
+-
+--&gt; IdentifiableArtefact
+-
+instanceVariables: link[]: (InstanceVariable)
+unitType: link: (UnitType)
+shortName: string
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>720</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+LogicalRecord_InstanceVariable
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>780</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+LogicalRecord_UnitType
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3120</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/MappingRawDataToInputData/*
+-
+-
+id: string
+sourceName: string
+sourcePath: string
+targetInstanceVariable: link: (InstanceVariable)
+validFrom?: datetime
+validUntil?: datetime
+lastUpdatedDate?: datetime
+lastUpdatedBy?: string
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>840</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+MappingRawDataToInputData_InstanceVariable
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3380</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/Population/*
+-
+--&gt; IdentifiableArtefact
+--&gt; Concept
+-
+populationType: string(enum)
+  - TARGET, SURVEY
+referencePeriodStartDate: datetime
+referencePeriodEndDate: datetime
+geography?: string(enum)
+  - CONTINENT, COUNTRY, REGION, COUNTY, MUNICIPALITY, ADRESS, CADASTRE, GEOLOCATION
+universes: link[]: (Universe)
+parentPopulations?: link[]: (Population)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>900</y>
+      <w>130</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+Population_Universe
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>960</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+Population_Population
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3640</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/RecordRelationship/*
+-
+--&gt; IdentifiableArtefact
+-
+relationType: string(enum)
+  - PARENT, CHILD, SIBLING, UNKNOWN
+sourceLogicalRecords: link[]: (LogicalRecord)
+targetLogicalRecords: link[]: (LogicalRecord)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1020</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+RecordRelationship_LogicalRecord
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1080</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+RecordRelationship_LogicalRecord
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3900</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/RepresentedVariable/*
+-
+--&gt; IdentifiableArtefact
+-
+variable: link: (Variable)
+universe: link: (Universe)
+substantiveValueDomain?: link: (EnumeratedValueDomain, DescribedValueDomain)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1140</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+RepresentedVariable_Variable
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1200</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+RepresentedVariable_Universe
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1260</y>
+      <w>390</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+RepresentedVariable_EnumeratedValueDomain, DescribedValueDomain
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4160</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/UnitDataSet/*
+-
+--&gt; IdentifiableArtefact
+--&gt; DataSet
+-
+unitDataStructure: link: (UnitDataStructure)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1320</y>
+      <w>180</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+UnitDataSet_UnitDataStructure
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4420</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/UnitDataStructure/*
+-
+--&gt; IdentifiableArtefact
+--&gt; DataStructure
+-
+logicalRecords: link[]: (LogicalRecord)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1380</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+UnitDataStructure_LogicalRecord
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4680</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/UnitType/*
+-
+--&gt; IdentifiableArtefact
+--&gt; Concept
+-
+typeOfStatisticalUnit: string(enum)
+  - ENTERPRISE, ESTABLISHMENT, PERSON, FAMILY, HOUSEHOLD, SHAREHOLDER, MUNICIPALITY, NOT_APPLICABLE
+parentUnitTypes?: link[]: (UnitType)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1440</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+UnitType_UnitType
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>4940</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/Universe/*
+-
+--&gt; IdentifiableArtefact
+--&gt; Concept
+-
+unitTypes: link[]: (UnitType)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1500</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+Universe_UnitType
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5200</x>
+      <y>10</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/Variable/*
+-
+--&gt; IdentifiableArtefact
+--&gt; Concept
+-
+unitType: link: (UnitType)
+
+
+bg=yellow
+</panel_attributes>
+    <additional_attributes />
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>1560</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+Variable_UnitType
+    </panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
