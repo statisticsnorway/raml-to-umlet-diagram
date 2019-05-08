@@ -2,6 +2,7 @@ import xml.etree.ElementTree as ET
 from Config import Config
 from Utils import Utils
 from RamlObject import RamlObject
+import time
 
     # Example of format-tagged "PanelAttributes-text" in the Umlet diagram-file (.uxf):
         # */DataSet/*
@@ -23,12 +24,16 @@ class UmletDiagram():
 
     conf = Config()
     umletPath = conf.umletPath
-    ramlPath = conf.ramlPath
+    #ramlPath = conf.ramlPath
 
     utils = Utils()
 
     ramlObj = RamlObject()
     ramlFiles = ramlObj.getRamlFiles()
+    abstractRamlFiles = ramlObj.getAbstractRamlFiles()
+    allRamlFiles = ramlObj.getAllRamlFiles()
+
+    numOfNewRamlObjectsAdded = 0
 
 
     def gsimNameToUmletTag(self, gsimName):
@@ -37,6 +42,9 @@ class UmletDiagram():
 
     def getGsimName(self, ramlFileName):
         return ramlFileName.replace(".raml", "")
+
+    def getRamlFileName(self, gsimName):
+        return gsimName + ".raml"
 
     def readUmletXmlFile(self, fileName):
         self.treeFile = ET.parse(self.umletPath + fileName)
@@ -54,6 +62,12 @@ class UmletDiagram():
 #         #self.treeFile.write(self.umletPath + 'NY_GSIM_physical_model.uxf')
 #         None
 
+    def updateUmletDiagramNote(self):
+        umletNote = self.umletXmlTree.find('.//*[id="UMLNote"]/panel_attributes')
+        umletNote.text = \
+          "*GSIM Physical Data Model - RAML Schema*\n" \
+          + "Version: " + time.strftime("%Y-%m-%d, %H:%M") + "\n" \
+          + "fontsize=14"
 
     def gsimObjectExistInUmletDiagram(self, gsimName):
         panelAttributesForAllUmletClasses = self.getPanelAttributesForAllUmletClasses()
@@ -122,6 +136,9 @@ class UmletDiagram():
                     ramlPropDescription = ramlObject["types"][ramlTypes]["properties"][ramlProperty]["description"]
                     #print(ramlPropDescription)
                 umletAttr += "\n"
+            if self.getRamlFileName(gsimName) in self.abstractRamlFiles:
+                umletAttr += "\n"
+                umletAttr += "lt=.." # dashed borderline in Umlet-diagram
         return umletAttr
 
 
@@ -129,12 +146,11 @@ class UmletDiagram():
         # Get existing panel-attributes for this Umlet diagram-object
         panel_attributes = self.getPanelAttributesForUmletClassByGsimName(gsimName)
         backGroundColor = self.getUmletPanelAttributeDetail(panel_attributes, "bg")
-        borderLineType = self.getUmletPanelAttributeDetail(panel_attributes, "lt")
+        #borderLineType = self.getUmletPanelAttributeDetail(panel_attributes, "lt")
         # Update with new metadata from the GSIM RAML-file
         umletPanelAttr = self.createPanelAttributesForUmletClass(gsimName)
-        umletPanelAttr += "\n"
         umletPanelAttr += "\n" + backGroundColor
-        umletPanelAttr += "\n" + borderLineType
+        #umletPanelAttr += "\n" + borderLineType
         panel_attributes.text = umletPanelAttr
         #self.treeFile.write(self.umletPath + 'NY_3_GSIM_physical_model.uxf')
 
@@ -153,6 +169,7 @@ class UmletDiagram():
           #   </panel_attributes>
           #   <additional_attributes />
           # </element>
+        self.numOfNewRamlObjectsAdded += 1
         umletClassElement = ET.Element("element")
         id = ET.SubElement(umletClassElement, "id")
         id.text = "UMLClass"
@@ -161,9 +178,9 @@ class UmletDiagram():
         additional_attributes = ET.SubElement(umletClassElement, "additional_attributes")
         umletCoordinates = ET.SubElement(umletClassElement, "coordinates")
         xCoord = ET.SubElement(umletCoordinates, "x")
-        xCoord.text = "10"
+        xCoord.text = str(10 + (self.numOfNewRamlObjectsAdded * 5))
         yCoord = ET.SubElement(umletCoordinates, "y")
-        yCoord.text = "10"
+        yCoord.text = str(50 + (self.numOfNewRamlObjectsAdded * 20))
         wCoord = ET.SubElement(umletCoordinates, "w")
         wCoord.text = "250"
         hCoord = ET.SubElement(umletCoordinates, "h")
@@ -175,7 +192,7 @@ class UmletDiagram():
     def generateUmletDiagram(self, umletFileName):
         self.readUmletXmlFile(umletFileName)
 
-        for ramlFile in self.ramlFiles:
+        for ramlFile in self.allRamlFiles:
             gsimName = self.getGsimName(ramlFile)
             if self.gsimObjectExistInUmletDiagram(gsimName):
                 self.updatePanelAttributesForUmletClassByGsimName(gsimName)
@@ -183,6 +200,7 @@ class UmletDiagram():
                 self.addNewUmletClassInDiagram(gsimName)
         # TODO: 1. backup av gammle fil (old + filnavn)
         # TODO: Sette riktig filnavn på nytt diagram!
+        self.updateUmletDiagramNote()
         self.treeFile.write(self.umletPath + "NEW_" + umletFileName)
 
 # RUN TEST

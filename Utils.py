@@ -10,3 +10,9 @@ class Utils():
         #print(ET.tostring(eTree, encoding='utf8', method='xml'))
         print(ET.tostring(eTree, encoding='unicode', method='xml'))
         #ElementTree.dump(root)
+
+    def printList(self, list):
+        strList = ""
+        for elem in list:
+            strList += elem + "\n"
+        print(strList)
