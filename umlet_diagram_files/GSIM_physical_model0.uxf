@@ -5,56 +5,7 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
-      <y>50</y>
-      <w>250</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>*/InformationResource/*
--
--
-parentResource?: link: (DataResource)
-
-lt=..
-bg=yellow</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>0</x>
-      <y>320</y>
-      <w>250</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>*/DataStructure/*
--
--
-
-lt=..
-bg=yellow</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>10</x>
-      <y>190</y>
-      <w>250</w>
-      <h>100</h>
-    </coordinates>
-    <panel_attributes>*/InformationSet/*
--
--
-
-lt=..
-bg=yellow</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>960</x>
+      <x>920</x>
       <y>0</y>
       <w>540</w>
       <h>150</h>
@@ -71,14 +22,14 @@ dataExistsUntilDate?: datetime
 dataSourcePath?: string
 metadataSourcePath?: string
 
-lt=..
-bg=yellow</panel_attributes>
+bg=yellow
+lt=..</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1450</x>
+      <x>1410</x>
       <y>680</y>
       <w>250</w>
       <h>140</h>
@@ -95,13 +46,14 @@ maxLength?: number
 minDecimals?: number
 maxDecimals?: number
 
-bg=green</panel_attributes>
+bg=green
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
+      <x>240</x>
       <y>240</y>
       <w>300</w>
       <h>100</h>
@@ -113,13 +65,14 @@ bg=green</panel_attributes>
 -
 dimensionalDataStructure: link: (DimensionalDataStructure)
 
-bg=yellow</panel_attributes>
+bg=yellow
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
+      <x>350</x>
       <y>330</y>
       <w>30</w>
       <h>70</h>
@@ -132,7 +85,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
+      <x>240</x>
       <y>380</y>
       <w>250</w>
       <h>100</h>
@@ -144,13 +97,14 @@ bg=yellow</panel_attributes>
 -
 instanceVariables: link[]: (InstanceVariable)
 
-bg=yellow</panel_attributes>
+bg=yellow
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>390</x>
+      <x>350</x>
       <y>470</y>
       <w>30</w>
       <h>260</h>
@@ -163,7 +117,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1450</x>
+      <x>1410</x>
       <y>840</y>
       <w>250</w>
       <h>100</h>
@@ -175,13 +129,14 @@ bg=yellow</panel_attributes>
 -
 klassUrl: string
 
-bg=green</panel_attributes>
+bg=green
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
+      <x>310</x>
       <y>710</y>
       <w>410</w>
       <h>230</h>
@@ -204,13 +159,16 @@ dataStructureComponentRole?: string(enum)
 geoType?: string(enum)
   - POINT, POLYGON, LINE
 
-bg=green</panel_attributes>
+
+bg=green
+
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>750</x>
+      <x>710</x>
       <y>760</y>
       <w>100</w>
       <h>40</h>
@@ -223,7 +181,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>750</x>
+      <x>710</x>
       <y>890</y>
       <w>160</w>
       <h>100</h>
@@ -236,7 +194,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>750</x>
+      <x>710</x>
       <y>830</y>
       <w>720</w>
       <h>40</h>
@@ -249,7 +207,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
+      <x>600</x>
       <y>530</y>
       <w>250</w>
       <h>100</h>
@@ -262,13 +220,14 @@ instanceVariables: link[]: (InstanceVariable)
 unitType: link: (UnitType)
 shortName: string
 
-bg=yellow</panel_attributes>
+bg=yellow
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
+      <x>660</x>
       <y>620</y>
       <w>30</w>
       <h>110</h>
@@ -281,7 +240,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
+      <x>840</x>
       <y>450</y>
       <w>90</w>
       <h>110</h>
@@ -294,7 +253,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>990</x>
+      <x>950</x>
       <y>530</y>
       <w>240</w>
       <h>110</h>
@@ -308,13 +267,14 @@ relationType: string(enum)
 sourceLogicalRecords: link[]: (LogicalRecord)
 targetLogicalRecords: link[]: (LogicalRecord)
 
-bg=yellow</panel_attributes>
+bg=yellow
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
+      <x>840</x>
       <y>570</y>
       <w>130</w>
       <h>40</h>
@@ -327,7 +287,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>830</x>
+      <x>790</x>
       <y>710</y>
       <w>420</w>
       <h>100</h>
@@ -340,13 +300,14 @@ variable: link: (Variable)
 universe: link: (Universe)
 substantiveValueDomain?: link: (EnumeratedValueDomain, DescribedValueDomain)
 
-bg=green</panel_attributes>
+bg=green
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
+      <x>1200</x>
       <y>580</y>
       <w>100</w>
       <h>160</h>
@@ -359,7 +320,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
+      <x>1200</x>
       <y>630</y>
       <w>380</w>
       <h>130</h>
@@ -372,7 +333,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
+      <x>1200</x>
       <y>750</y>
       <w>230</w>
       <h>50</h>
@@ -385,7 +346,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
+      <x>600</x>
       <y>240</y>
       <w>250</w>
       <h>100</h>
@@ -397,13 +358,14 @@ bg=green</panel_attributes>
 -
 unitDataStructure: link: (UnitDataStructure)
 
-bg=yellow</panel_attributes>
+bg=yellow
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
+      <x>660</x>
       <y>330</y>
       <w>30</w>
       <h>70</h>
@@ -416,7 +378,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
+      <x>600</x>
       <y>380</y>
       <w>250</w>
       <h>100</h>
@@ -428,13 +390,14 @@ bg=yellow</panel_attributes>
 -
 logicalRecords: link[]: (LogicalRecord)
 
-bg=yellow</panel_attributes>
+bg=yellow
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
+      <x>660</x>
       <y>470</y>
       <w>30</w>
       <h>80</h>
@@ -447,7 +410,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>950</x>
+      <x>910</x>
       <y>370</y>
       <w>380</w>
       <h>110</h>
@@ -461,13 +424,14 @@ typeOfStatisticalUnit: string(enum)
   - ENTERPRISE, ESTABLISHMENT, PERSON, FAMILY, HOUSEHOLD, SHAREHOLDER, MUNICIPALITY, NOT_APPLICABLE
 parentUnitTypes?: link[]: (UnitType)
 
-bg=green</panel_attributes>
+bg=green
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1300</x>
+      <x>1260</x>
       <y>330</y>
       <w>80</w>
       <h>70</h>
@@ -480,7 +444,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1320</x>
+      <x>1280</x>
       <y>510</y>
       <w>230</w>
       <h>100</h>
@@ -492,13 +456,14 @@ bg=green</panel_attributes>
 -
 unitType: link: (UnitType)
 
-bg=green</panel_attributes>
+bg=green
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1320</x>
+      <x>1280</x>
       <y>440</y>
       <w>80</w>
       <h>90</h>
@@ -511,7 +476,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>750</x>
+      <x>710</x>
       <y>790</y>
       <w>720</w>
       <h>80</h>
@@ -524,7 +489,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>880</x>
+      <x>840</x>
       <y>590</y>
       <w>130</w>
       <h>40</h>
@@ -537,7 +502,7 @@ bg=green</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1240</x>
+      <x>1200</x>
       <y>770</y>
       <w>230</w>
       <h>140</h>
@@ -550,7 +515,7 @@ bg=green</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>430</x>
+      <x>390</x>
       <y>980</y>
       <w>240</w>
       <h>110</h>
@@ -564,13 +529,31 @@ relationType: string(enum)
 sourceComponents: link[]: (InstanceVariable)
 targetComponents: link[]: (InstanceVariable)
 
-bg=yellow</panel_attributes>
+bg=yellow
+
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>850</x>
+      <x>1010</x>
+      <y>170</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*/DataStructure/*
+-
+-
+
+bg=yellow
+lt=..</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>810</x>
       <y>970</y>
       <w>540</w>
       <h>180</h>
@@ -589,13 +572,14 @@ geography?: string(enum)
 universes: link[]: (Universe)
 parentPopulations?: link[]: (Population)
 
-bg=green</panel_attributes>
+bg=green
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1600</x>
+      <x>1560</x>
       <y>550</y>
       <w>250</w>
       <h>100</h>
@@ -607,13 +591,14 @@ bg=green</panel_attributes>
 -
 unitTypes: link[]: (UnitType)
 
-bg=green</panel_attributes>
+bg=green
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1530</x>
+      <x>1490</x>
       <y>290</y>
       <w>550</w>
       <h>100</h>
@@ -626,14 +611,15 @@ administrativeDetailType: string(enum)
   - DEFAULTLANGUAGE, ANNOTATION, ALIAS, URL, DOCUMENTATION, LIFECYCLESTATUS, LOCALID
 values: string[]
 
+bg=orange
 lt=..
-bg=orange</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1530</x>
+      <x>1490</x>
       <y>0</y>
       <w>340</w>
       <h>260</h>
@@ -657,16 +643,15 @@ validFrom: datetime
 validUntil?: datetime
 administrativeDetails?: AdministrativeDetails.AdministrativeDetails[]
 agentInRoles?: link[]: (AgentInRole)
-
-lt=..
 bg=orange
+lt=..
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1380</x>
+      <x>1340</x>
       <y>640</y>
       <w>390</w>
       <h>430</h>
@@ -679,7 +664,7 @@ bg=orange
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>480</x>
+      <x>440</x>
       <y>930</y>
       <w>30</w>
       <h>70</h>
@@ -692,7 +677,7 @@ bg=orange
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
+      <x>550</x>
       <y>930</y>
       <w>30</w>
       <h>70</h>
@@ -705,20 +690,21 @@ bg=orange
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>50</x>
+      <x>10</x>
       <y>0</y>
       <w>320</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>*GSIM Physical Data Model - RAML Schema*
-Version: 2019-05-09, 14:38
+Version: 2019-05-02
+
 fontsize=14</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1700</x>
+      <x>1660</x>
       <y>250</y>
       <w>30</w>
       <h>60</h>
@@ -729,7 +715,7 @@ fontsize=14</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>350</x>
+      <x>310</x>
       <y>80</y>
       <w>450</w>
       <h>110</h>
@@ -743,13 +729,14 @@ dataResourceType?: string(enum)
   - STATISTICAL_REGISTER_PERSONS, ETABLISHMENT_ENTERPRISE_REGISTER
 dataSets?: link[]: (UnitDataSet, DimensionalDataSet)
 
-bg=yellow</panel_attributes>
+bg=yellow
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
+      <x>360</x>
       <y>180</y>
       <w>30</w>
       <h>80</h>
@@ -761,7 +748,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
+      <x>660</x>
       <y>180</y>
       <w>30</w>
       <h>80</h>
@@ -773,7 +760,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1360</x>
+      <x>1320</x>
       <y>930</y>
       <w>80</w>
       <h>70</h>
@@ -786,7 +773,7 @@ bg=yellow</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>50</x>
+      <x>10</x>
       <y>750</y>
       <w>250</w>
       <h>150</h>
@@ -802,15 +789,13 @@ validFrom?: datetime
 validUntil?: datetime
 lastUpdatedDate?: datetime
 lastUpdatedBy?: string
-
-
-bg=gray</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>290</x>
+      <x>250</x>
       <y>820</y>
       <w>80</w>
       <h>40</h>

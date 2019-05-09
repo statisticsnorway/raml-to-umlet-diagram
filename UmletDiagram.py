@@ -3,6 +3,8 @@ from Config import Config
 from Utils import Utils
 from RamlObject import RamlObject
 import time
+from shutil import copyfile
+
 
     # Example of format-tagged "PanelAttributes-text" in the Umlet diagram-file (.uxf):
         # */DataSet/*
@@ -34,6 +36,7 @@ class UmletDiagram():
     allRamlFiles = ramlObj.getAllRamlFiles()
 
     numOfNewRamlObjectsAdded = 0
+    numOfUpdatedRamlObjects = 0
 
 
     def gsimNameToUmletTag(self, gsimName):
@@ -136,13 +139,14 @@ class UmletDiagram():
                     ramlPropDescription = ramlObject["types"][ramlTypes]["properties"][ramlProperty]["description"]
                     #print(ramlPropDescription)
                 umletAttr += "\n"
-            if self.getRamlFileName(gsimName) in self.abstractRamlFiles:
-                umletAttr += "\n"
-                umletAttr += "lt=.." # dashed borderline in Umlet-diagram
+        if self.getRamlFileName(gsimName) in self.abstractRamlFiles:
+            umletAttr += "\n"
+            umletAttr += "lt=.." # dashed borderline in Umlet-diagram
         return umletAttr
 
 
     def updatePanelAttributesForUmletClassByGsimName(self, gsimName):
+        self.numOfUpdatedRamlObjects += 1
         # Get existing panel-attributes for this Umlet diagram-object
         panel_attributes = self.getPanelAttributesForUmletClassByGsimName(gsimName)
         backGroundColor = self.getUmletPanelAttributeDetail(panel_attributes, "bg")
@@ -201,7 +205,11 @@ class UmletDiagram():
         # TODO: 1. backup av gammle fil (old + filnavn)
         # TODO: Sette riktig filnavn på nytt diagram!
         self.updateUmletDiagramNote()
-        self.treeFile.write(self.umletPath + "NEW_" + umletFileName)
+        # Backup Umlet diagram file before write.
+        copyfile(self.umletPath + umletFileName, self.umletPath + umletFileName + "_" + time.strftime("%Y%m%d%H%M%S"))
+        self.treeFile.write(self.umletPath + umletFileName)
+        print(str(self.numOfNewRamlObjectsAdded) + " new GSIM/RAML class object(s) added to Umlet diagram.")
+        print(str(self.numOfUpdatedRamlObjects) + " existing GSIM/RAML class object(s) updated in Umlet diagram.")
 
 # RUN TEST
 ud = UmletDiagram()
