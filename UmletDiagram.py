@@ -4,6 +4,7 @@ from Utils import Utils
 from RamlObject import RamlObject
 import time
 from shutil import copyfile
+import os
 
 
     # Example of format-tagged "PanelAttributes-text" in the Umlet diagram-file (.uxf):
@@ -17,7 +18,7 @@ from shutil import copyfile
         # metadataSourcePath?: string
         #
         # bg=yellow
-        # lt=..
+        # lt=.
 
 class UmletDiagram():
 
@@ -141,7 +142,7 @@ class UmletDiagram():
                 umletAttr += "\n"
         if self.getRamlFileName(gsimName) in self.abstractRamlFiles:
             umletAttr += "\n"
-            umletAttr += "lt=.." # dashed borderline in Umlet-diagram
+            umletAttr += "lt=." # dashed borderline in the Umlet-diagram
         return umletAttr
 
 
@@ -208,8 +209,9 @@ class UmletDiagram():
         # Backup Umlet diagram file before write.
         copyfile(self.umletPath + umletFileName, self.umletPath + umletFileName + "_" + time.strftime("%Y%m%d%H%M%S"))
         self.treeFile.write(self.umletPath + umletFileName)
-        print(str(self.numOfNewRamlObjectsAdded) + " new GSIM/RAML class object(s) added to Umlet diagram.")
-        print(str(self.numOfUpdatedRamlObjects) + " existing GSIM/RAML class object(s) updated in Umlet diagram.")
+        print("\nUmlet diagram: " + os.path.abspath(self.umletPath + umletFileName))
+        print(".. " + str(self.numOfNewRamlObjectsAdded) + " new GSIM/RAML class object(s) added to Umlet diagram.")
+        print(".. " + str(self.numOfUpdatedRamlObjects) + " existing GSIM/RAML class object(s) updated in Umlet diagram.")
 
 # RUN TEST
 ud = UmletDiagram()
