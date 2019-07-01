@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
   <help_text>fontsize=11
 </help_text>
@@ -21,7 +20,7 @@ presentationFormat: string
 informationSetsToPresent: link[]: (DimensionalDataSet, UnitDataSet)
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -39,7 +38,7 @@ products?: link[]: (Product)
 presentations?: link[]: (Presentation)
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -56,7 +55,7 @@ bg=pink</panel_attributes>
 -
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -75,7 +74,7 @@ dataHarvestingType: string(enum)
   - API, WEBSCRAPING
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -93,7 +92,7 @@ bg=pink</panel_attributes>
 supplierIdentifier: string
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -111,7 +110,7 @@ bg=pink</panel_attributes>
 presentations: link[]: (Presentation)
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -132,7 +131,7 @@ producesInformationSets?: link[]: (UnitDataSet, DimensionalDataSet)
 
 lt=.
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -162,7 +161,7 @@ informationConsumers?: link[]: (AgentInRole)
 agreedDataStructures?: link[]: (UnitDataStructure, DimensionalDataStructure)
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -180,7 +179,7 @@ protocolType: string(enum)
   - API, FTP, SFTP, HTTP, HTTPS, EMAIL, OPTICAL_DEVICE, DATABASE
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -198,7 +197,7 @@ nationalConceptsCatalogURI?: string
 
 lt=.
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -214,7 +213,7 @@ bg=green</panel_attributes>
 -
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -233,7 +232,7 @@ conversionRule?: string
 abbreviation?: string
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -249,7 +248,7 @@ bg=green</panel_attributes>
 -
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -269,7 +268,7 @@ values: string[]
 
 lt=.
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -285,7 +284,7 @@ bg=orange</panel_attributes>
 -
 
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -303,7 +302,7 @@ role: link: (Role)
 agents: link[]: (Agent)
 
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -324,7 +323,7 @@ isExternal: boolean
 agentDetails?: AgentDetails.AgentDetails[]
 
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -343,7 +342,7 @@ measurementUnit?: link: (MeasurementUnit)
 
 lt=.
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -363,7 +362,7 @@ languageText: string
 
 lt=.
 bg=light_gray</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -380,7 +379,7 @@ parentResource?: link: (DataResource)
 
 lt=.
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -396,7 +395,7 @@ bg=yellow</panel_attributes>
 
 lt=.
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -412,7 +411,7 @@ bg=yellow</panel_attributes>
 
 lt=.
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -436,7 +435,7 @@ metadataSourcePath?: string
 
 lt=.
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -459,7 +458,7 @@ minDecimals?: number
 maxDecimals?: number
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -477,7 +476,7 @@ bg=green</panel_attributes>
 dimensionalDataStructure: link: (DimensionalDataStructure)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -508,7 +507,7 @@ bg=yellow</panel_attributes>
 instanceVariables: link[]: (InstanceVariable)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -539,7 +538,7 @@ bg=yellow</panel_attributes>
 klassUrl: string
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -568,7 +567,7 @@ geoType?: string(enum)
   - POINT, POLYGON, LINE
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -626,7 +625,7 @@ unitType: link: (UnitType)
 shortName: string
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -672,7 +671,7 @@ sourceLogicalRecords: link[]: (LogicalRecord)
 targetLogicalRecords: link[]: (LogicalRecord)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -704,7 +703,7 @@ universe: link: (Universe)
 substantiveValueDomain?: link: (EnumeratedValueDomain, DescribedValueDomain)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -761,7 +760,7 @@ bg=green</panel_attributes>
 unitDataStructure: link: (UnitDataStructure)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -792,7 +791,7 @@ bg=yellow</panel_attributes>
 logicalRecords: link[]: (LogicalRecord)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -825,7 +824,7 @@ typeOfStatisticalUnit: string(enum)
 parentUnitTypes?: link[]: (UnitType)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -856,7 +855,7 @@ bg=green</panel_attributes>
 unitType: link: (UnitType)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -928,7 +927,7 @@ sourceComponents: link[]: (InstanceVariable)
 targetComponents: link[]: (InstanceVariable)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -953,7 +952,7 @@ universes: link[]: (Universe)
 parentPopulations?: link[]: (Population)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -971,7 +970,7 @@ bg=green</panel_attributes>
 unitTypes: link[]: (UnitType)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -991,7 +990,7 @@ values: string[]
 
 lt=.
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
@@ -1023,7 +1022,7 @@ agentInRoles?: link[]: (AgentInRole)
 
 lt=.
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -1073,9 +1072,9 @@ bg=orange</panel_attributes>
       <h>40</h>
     </coordinates>
     <panel_attributes>*GSIM Physical Data Model - RAML Schema*
-Version: 2019-07-01, 09:43
+Version: 2019-07-01, 14:00
 fontsize=14</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -1106,7 +1105,7 @@ dataResourceType?: string(enum)
 dataSets?: link[]: (UnitDataSet, DimensionalDataSet)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -1166,7 +1165,7 @@ lastUpdatedDate?: datetime
 lastUpdatedBy?: string
 
 bg=light_gray</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -1349,7 +1348,7 @@ and codelists based on GSIM
 bg=light_gray
 fontsize=14
 lw=2</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -1545,7 +1544,7 @@ lw=2</panel_attributes>
     <panel_attributes>consumes /
 produces
 style=wordwrap</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Text</id>
@@ -1557,7 +1556,7 @@ style=wordwrap</panel_attributes>
     </coordinates>
     <panel_attributes>consumes / produces
 style=wordwrap</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
@@ -1667,7 +1666,7 @@ style=wordwrap</panel_attributes>
     </coordinates>
     <panel_attributes>informationProviders
 style=wordwrap</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Text</id>
@@ -1679,7 +1678,7 @@ style=wordwrap</panel_attributes>
     </coordinates>
     <panel_attributes>informationConsumers
 style=wordwrap</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>

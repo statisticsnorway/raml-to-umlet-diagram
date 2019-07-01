@@ -16,8 +16,8 @@ class RamlObject():
 
 
     def readAndCleanRamlFile(self, ramlFile):
-        # Fjerner diverse "grums" fra raml-filen som ikke følger(?) yaml-syntaks.
-        # Eksempel på linjer som fjernes:
+        # Remove non-yaml-syntax lines from the raml-file before reading it. 
+        # Example of lines removed from the raml-file:
         #    #%RAML 1.0 Library
         #    example: !include ../examples/_main/LogicalRecord_Person_1.json
         cleanedRaml = ""
@@ -38,7 +38,7 @@ class RamlObject():
         return cleanedRaml
 
     def ramlFile2DictObject(self, ramlFile):
-        # Konverterer raml (yaml) til Python dictionary object
+        # Convert raml (yaml) to Python dictionary object
         strRaml = self.readAndCleanRamlFile(ramlFile)
         ramlObjekt = yaml.load(strRaml, Loader=yaml.FullLoader)
         #for x, y in ramlObjekt.items():
@@ -61,7 +61,7 @@ class RamlObject():
         return allFiles
 
 
-# RUN TEST
+# RUN example:
 #ro = RamlObject()
 #files = ro.getAllRamlFiles()
 #ro.utils.printList(files)

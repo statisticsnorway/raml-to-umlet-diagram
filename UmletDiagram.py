@@ -25,11 +25,13 @@ class UmletDiagram():
     treeFile = None
     umletXmlTree = None
 
+    utils = Utils()
+
     conf = Config()
     umletPath = conf.umletPath
     #ramlPath = conf.ramlPath
 
-    utils = Utils()
+    umletFileName = None
 
     ramlObj = RamlObject()
     ramlFiles = ramlObj.getRamlFiles()
@@ -53,18 +55,6 @@ class UmletDiagram():
     def readUmletXmlFile(self, fileName):
         self.treeFile = ET.parse(self.umletPath + fileName)
         self.umletXmlTree = self.treeFile.getroot()
-
-# TODO: Trenger trolig ikke denne metoden ????
-    def writeUMLetXmlFile(self, xml, fileName):
-        xmlfile = open(self.umletPath + fileName + ".uxf", mode="w", encoding="utf-8")
-        #xmlfile.write(xml.decode())
-        xmlfile.write(xml)
-        xmlfile.close()
-
-# # TODO: Usikker på om denne er nødvendig????
-#     def writeUMLetXmlFile(self, fileName):
-#         #self.treeFile.write(self.umletPath + 'NY_GSIM_physical_model.uxf')
-#         None
 
     def updateUmletDiagramNote(self):
         umletNote = self.umletXmlTree.find('.//*[id="UMLNote"]/panel_attributes')
@@ -99,7 +89,6 @@ class UmletDiagram():
                 return line
         return ""
 
-# TODO: Umlet-relasjoner (piler)!!!!
     def createPanelAttributesForUmletClass(self, gsimName):
         umletAttr = ""
         ramlObject = self.ramlObj.ramlFile2DictObject(gsimName + ".raml")
@@ -124,7 +113,7 @@ class UmletDiagram():
                     ramlPropLinkTypes = str(ramlObject["types"][ramlTypes]["properties"][ramlProperty]["(Link.types)"])
                     ramlPropLinkTypes = ramlPropLinkTypes.replace("[","").replace("]","").replace("'","")
                     umletAttr += "link" + ramlPropType + ": (" + ramlPropLinkTypes + ")"
-# TODO: Umlet-relasjoner (piler):
+                    # TODO: Generate Umlet diagram relations (arrows)???
                     #self.umletRelations.append(self.createUMLetRelation(str(ramlTypes) + "_" + ramlPropLinkTypes ,10, (self.relationCount*60)+120))
                     #self.relationCount += 1
                 elif "type" in ramlObject["types"][ramlTypes]["properties"][ramlProperty]:
@@ -144,7 +133,6 @@ class UmletDiagram():
             umletAttr += "\n"
             umletAttr += "lt=." # dashed borderline in the Umlet-diagram
         return umletAttr
-
 
     def updatePanelAttributesForUmletClassByGsimName(self, gsimName):
         self.numOfUpdatedRamlObjects += 1
@@ -192,10 +180,9 @@ class UmletDiagram():
         hCoord.text = "100"
         self.umletXmlTree.insert(2, umletClassElement)
 
-
-# TODO:
-    def generateUmletDiagram(self, umletFileName):
-        self.readUmletXmlFile(umletFileName)
+    # "Main method"
+    def generateUmletDiagram(self):
+        self.readUmletXmlFile(self.umletFileName)  # <-- NB! The "umletFileName" must either be a new (empty) Umlet uxf-file, or an existing Umlet diagram (uxf-file) to be updated.
 
         for ramlFile in self.allRamlFiles:
             gsimName = self.getGsimName(ramlFile)
@@ -203,21 +190,17 @@ class UmletDiagram():
                 self.updatePanelAttributesForUmletClassByGsimName(gsimName)
             else:
                 self.addNewUmletClassInDiagram(gsimName)
-        # TODO: 1. backup av gammle fil (old + filnavn)
-        # TODO: Sette riktig filnavn på nytt diagram!
         self.updateUmletDiagramNote()
-        # Backup Umlet diagram file before write.
-        copyfile(self.umletPath + umletFileName, self.umletPath + umletFileName + "_" + time.strftime("%Y%m%d%H%M%S"))
-        self.treeFile.write(self.umletPath + umletFileName)
-        print("\nUmlet diagram: " + os.path.abspath(self.umletPath + umletFileName))
+        # Backup Umlet diagram file before overwrite.
+        copyfile(self.umletPath + self.umletFileName, self.umletPath + self.umletFileName + "_" + time.strftime("%Y%m%d%H%M%S"))
+        self.treeFile.write(self.umletPath + self.umletFileName)
+        print("\nUmlet diagram: " + os.path.abspath(self.umletPath + self.umletFileName))
         print(".. " + str(self.numOfNewRamlObjectsAdded) + " new GSIM/RAML class object(s) added to Umlet diagram.")
         print(".. " + str(self.numOfUpdatedRamlObjects) + " existing GSIM/RAML class object(s) updated in Umlet diagram.")
 
-# RUN TEST
-ud = UmletDiagram()
-ud.generateUmletDiagram("GSIM_physical_model.uxf")
-#ud.generateUmletDiagram("dummy")
-#ud.readUmletXmlFile("GSIM_physical_model.uxf")
-#print(ud.gsimObjectExistInUmletDiagram("LogicalRecord"))
-#print(ud.getPanelAttributesForUmletClassByGsimName("LogicalRecord"))
-#ud.updatePanelAttributesForUmletClassByGsimName("LogicalRecord")
+
+# RUN "Main method"
+if  __name__ =='__main__':
+    ud = UmletDiagram()
+    ud.umletFileName = "GSIM_physical_model.uxf"  # <-- NB! The "umletFileName" must either be a new (empty) Umlet uxf-file, or an existing Umlet diagram (uxf-file) to be updated.
+    ud.generateUmletDiagram()
