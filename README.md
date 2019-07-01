@@ -3,7 +3,7 @@ Generate a new draft UMLet diagram from the GSIM RAML-schemas, or update an exis
 
 _raml-to-umlet-diagram_ generates an Umlet XML diagram file (uxf-file) based on information in the RAML-schema files.
 
-UMLet is a free, open-source UML tool with a simple user interface. See https://www.umlet.com/ and http://www.umletino.com/ for more information.
+Veiw the generated diagram with UMLet. UMLet is a free, open-source UML tool with a simple user interface. See https://www.umlet.com/ and http://www.umletino.com/ for more information.
 
 ## Prerequisites
 * `pip install PyYAML`  (see https://pypi.org/project/PyYAML/ )
