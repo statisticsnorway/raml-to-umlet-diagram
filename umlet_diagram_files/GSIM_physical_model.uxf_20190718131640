@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
   <help_text>fontsize=11
 </help_text>
@@ -6,82 +5,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2090</x>
-      <y>200</y>
-      <w>500</w>
-      <h>190</h>
-    </coordinates>
-    <panel_attributes>*/StatisticalProgramDesign/*
--
---&gt; IdentifiableArtefact
--
-businessCases?: link[]: (BusinessCase)
-processDesigns?: link[]: (ProcessDesign)
-processPatterns?: link[]: (ProcessPattern)
-businessFunctions?: link[]: (BusinessFunction)
-dateInitiated?: datetime
-dateEnded?: datetime
-statisticalProgramDesignStatus: string(enum)
-  - NEW, UNDER_DEVELOPMENT, CURRENT, COMPLETED, CANCELLED, TRANSFERRED
-conceptualFrameworks?: MultilingualText.MultilingualText[]
-
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>2090</x>
-      <y>20</y>
-      <w>250</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>*/StatisticalProgramCycle/*
--
---&gt; IdentifiableArtefact
--
-businessProcesses?: link[]: (BusinessProcess)
-referencePeriodStart: datetime
-referencePeriodEnd: datetime
-
-bg=cyan</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1410</x>
-      <y>40</y>
-      <w>510</w>
-      <h>250</h>
-    </coordinates>
-    <panel_attributes>*/StatisticalProgram/*
--
---&gt; IdentifiableArtefact
--
-parentStatisticalPrograms?: link[]: (StatisticalProgram)
-statisticalProgramDesign?: link: (StatisticalProgramDesign)
-statisticalProgramCycles?: link[]: (StatisticalProgramCycle)
-dateInitiated?: datetime
-dateEnded?: datetime
-statisticalProgramStatus: string(enum)
-  - NEW, UNDER_DEVELOPMENT, CURRENT, COMPLETED, CANCELLED, TRANSFERRED
-history: MultilingualText.MultilingualText[]
-subjectMatterDomains: MultilingualText.MultilingualText[]
-sourceOfFunding?: MultilingualText.MultilingualText[]
-budget?: number
-legislativeReferences?: MultilingualText.MultilingualText[]
-legalFrameworks?: MultilingualText.MultilingualText[]
-
-bg=cyan
-fg=black</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
       <x>570</x>
-      <y>350</y>
+      <y>280</y>
       <w>350</w>
       <h>110</h>
     </coordinates>
@@ -95,13 +20,13 @@ presentationFormat: string
 informationSetsToPresent: link[]: (DimensionalDataSet, UnitDataSet)
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>620</x>
-      <y>220</y>
+      <y>150</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -113,13 +38,13 @@ products?: link[]: (Product)
 presentations?: link[]: (Presentation)
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>990</x>
-      <y>600</y>
+      <y>530</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -130,13 +55,13 @@ bg=pink</panel_attributes>
 -
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>990</x>
-      <y>720</y>
+      <y>650</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -149,13 +74,13 @@ dataHarvestingType: string(enum)
   - API, WEBSCRAPING
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>990</x>
-      <y>480</y>
+      <y>410</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -167,13 +92,13 @@ bg=pink</panel_attributes>
 supplierIdentifier: string
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>990</x>
-      <y>360</y>
+      <y>290</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -185,13 +110,13 @@ bg=pink</panel_attributes>
 presentations: link[]: (Presentation)
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>180</x>
-      <y>220</y>
+      <y>150</y>
       <w>360</w>
       <h>120</h>
     </coordinates>
@@ -206,13 +131,13 @@ producesInformationSets?: link[]: (UnitDataSet, DimensionalDataSet)
 
 lt=.
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1440</x>
-      <y>400</y>
+      <y>330</y>
       <w>480</w>
       <h>250</h>
     </coordinates>
@@ -224,6 +149,8 @@ regulation: string(enum)
   - VOLUNTARY, MANDATORY, ADMINISTRATIVE_REGISTER
 provisionAgreementStatus: string(enum)
   - DRAFT, INTERNAL, OPEN, DEPRECATED
+valuation?: string(enum)
+  - A, B, C, D, E
 changeManagement?: MultilingualText.MultilingualText[]
 informationSource: MultilingualText.MultilingualText[]
 frequency: string(enum)
@@ -234,13 +161,13 @@ informationConsumers?: link[]: (AgentInRole)
 agreedDataStructures?: link[]: (UnitDataStructure, DimensionalDataStructure)
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>940</x>
-      <y>240</y>
+      <y>170</y>
       <w>390</w>
       <h>100</h>
     </coordinates>
@@ -252,13 +179,13 @@ protocolType: string(enum)
   - API, FTP, SFTP, HTTP, HTTPS, EMAIL, OPTICAL_DEVICE, DATABASE
 
 bg=pink</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>320</x>
-      <y>1460</y>
+      <y>1390</y>
       <w>220</w>
       <h>90</h>
     </coordinates>
@@ -270,13 +197,13 @@ nationalConceptsCatalogURI?: string
 
 lt=.
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2610</x>
-      <y>1100</y>
+      <y>1030</y>
       <w>220</w>
       <h>90</h>
     </coordinates>
@@ -286,13 +213,13 @@ bg=green</panel_attributes>
 -
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2800</x>
-      <y>1610</y>
+      <y>1540</y>
       <w>240</w>
       <h>100</h>
     </coordinates>
@@ -305,13 +232,13 @@ conversionRule?: string
 abbreviation?: string
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2810</x>
-      <y>1480</y>
+      <y>1410</y>
       <w>220</w>
       <h>90</h>
     </coordinates>
@@ -321,13 +248,13 @@ bg=green</panel_attributes>
 -
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2010</x>
-      <y>840</y>
+      <y>770</y>
       <w>450</w>
       <h>140</h>
     </coordinates>
@@ -341,13 +268,13 @@ values: string[]
 
 lt=.
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2590</x>
-      <y>660</y>
+      <y>590</y>
       <w>270</w>
       <h>140</h>
     </coordinates>
@@ -357,13 +284,13 @@ bg=orange</panel_attributes>
 -
 
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2500</x>
-      <y>840</y>
+      <y>770</y>
       <w>340</w>
       <h>140</h>
     </coordinates>
@@ -375,13 +302,13 @@ role: link: (Role)
 agents: link[]: (Agent)
 
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2070</x>
-      <y>660</y>
+      <y>590</y>
       <w>350</w>
       <h>140</h>
     </coordinates>
@@ -396,13 +323,13 @@ isExternal: boolean
 agentDetails?: AgentDetails.AgentDetails[]
 
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>250</x>
-      <y>1570</y>
+      <y>1500</y>
       <w>290</w>
       <h>100</h>
     </coordinates>
@@ -415,13 +342,13 @@ measurementUnit?: link: (MeasurementUnit)
 
 lt=.
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>3270</x>
-      <y>640</y>
+      <y>570</y>
       <w>190</w>
       <h>100</h>
     </coordinates>
@@ -435,13 +362,13 @@ languageText: string
 
 lt=.
 bg=light_gray</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>290</x>
-      <y>920</y>
+      <y>850</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -449,17 +376,16 @@ bg=light_gray</panel_attributes>
 -
 -
 parentResource?: link: (DataResource)
-owner: link: (ProvisionAgreement, StatisticalProgram)
 
 lt=.
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>290</x>
-      <y>1230</y>
+      <y>1140</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -469,13 +395,13 @@ bg=yellow</panel_attributes>
 
 lt=.
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>290</x>
-      <y>800</y>
+      <y>730</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -485,15 +411,15 @@ bg=yellow</panel_attributes>
 
 lt=.
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>1040</y>
+      <y>970</y>
       <w>540</w>
-      <h>170</h>
+      <h>150</h>
     </coordinates>
     <panel_attributes>*/DataSet/*
 -
@@ -502,8 +428,6 @@ dataSetState: string(enum)
   - RAW_DATA, INPUT_DATA, PROCESSED_DATA, OUTPUT_DATA, DATA_PRODUCT, OTHER_DATA
 temporalityType?: string(enum)
   - EVENT, STATUS, ACCUMULATED, FIXED
-valuation?: string(enum)
-  - SENSITIVE, SHIELDED, INTERNAL, OPEN
 dataExistsFromDate?: datetime
 dataExistsUntilDate?: datetime
 dataSourcePath?: string
@@ -511,13 +435,13 @@ metadataSourcePath?: string
 
 lt=.
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2440</x>
-      <y>1450</y>
+      <y>1380</y>
       <w>250</w>
       <h>140</h>
     </coordinates>
@@ -534,13 +458,13 @@ minDecimals?: number
 maxDecimals?: number
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1270</x>
-      <y>1000</y>
+      <y>930</y>
       <w>300</w>
       <h>100</h>
     </coordinates>
@@ -552,13 +476,13 @@ bg=green</panel_attributes>
 dimensionalDataStructure: link: (DimensionalDataStructure)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1380</x>
-      <y>1090</y>
+      <y>1020</y>
       <w>30</w>
       <h>100</h>
     </coordinates>
@@ -571,7 +495,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1270</x>
-      <y>1170</y>
+      <y>1100</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -583,13 +507,13 @@ bg=yellow</panel_attributes>
 instanceVariables: link[]: (InstanceVariable)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1380</x>
-      <y>1260</y>
+      <y>1190</y>
       <w>30</w>
       <h>240</h>
     </coordinates>
@@ -602,7 +526,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2440</x>
-      <y>1610</y>
+      <y>1540</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -614,13 +538,13 @@ bg=yellow</panel_attributes>
 klassUrl: string
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1340</x>
-      <y>1480</y>
+      <y>1410</y>
       <w>410</w>
       <h>230</h>
     </coordinates>
@@ -634,23 +558,22 @@ dataStructureComponentType: string(enum)
   - IDENTIFIER, MEASURE, ATTRIBUTE
 shortName: string
 sentinelValueDomain?: link: (EnumeratedValueDomain, DescribedValueDomain)
-formatMask?: string
+format?: string
 identifierComponentIsUnique?: boolean
 identifierComponentIsComposite?: boolean
 dataStructureComponentRole?: string(enum)
   - ENTITY, IDENTITY, COUNT, TIME, GEO
 geoType?: string(enum)
   - POINT, POLYGON, LINE
-mandatory?: boolean
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1740</x>
-      <y>1530</y>
+      <y>1460</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
@@ -663,7 +586,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1740</x>
-      <y>1660</y>
+      <y>1590</y>
       <w>160</w>
       <h>100</h>
     </coordinates>
@@ -676,7 +599,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1740</x>
-      <y>1600</y>
+      <y>1530</y>
       <w>720</w>
       <h>40</h>
     </coordinates>
@@ -689,7 +612,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1630</x>
-      <y>1320</y>
+      <y>1250</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -702,13 +625,13 @@ unitType: link: (UnitType)
 shortName: string
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1690</x>
-      <y>1410</y>
+      <y>1340</y>
       <w>30</w>
       <h>90</h>
     </coordinates>
@@ -721,7 +644,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1870</x>
-      <y>1180</y>
+      <y>1110</y>
       <w>90</w>
       <h>170</h>
     </coordinates>
@@ -734,7 +657,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1980</x>
-      <y>1320</y>
+      <y>1250</y>
       <w>240</w>
       <h>110</h>
     </coordinates>
@@ -748,13 +671,13 @@ sourceLogicalRecords: link[]: (LogicalRecord)
 targetLogicalRecords: link[]: (LogicalRecord)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1870</x>
-      <y>1360</y>
+      <y>1290</y>
       <w>130</w>
       <h>40</h>
     </coordinates>
@@ -767,7 +690,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1820</x>
-      <y>1480</y>
+      <y>1410</y>
       <w>420</w>
       <h>100</h>
     </coordinates>
@@ -780,13 +703,13 @@ universe: link: (Universe)
 substantiveValueDomain?: link: (EnumeratedValueDomain, DescribedValueDomain)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2230</x>
-      <y>1350</y>
+      <y>1280</y>
       <w>100</w>
       <h>160</h>
     </coordinates>
@@ -799,7 +722,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2230</x>
-      <y>1400</y>
+      <y>1330</y>
       <w>380</w>
       <h>130</h>
     </coordinates>
@@ -812,7 +735,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2230</x>
-      <y>1520</y>
+      <y>1450</y>
       <w>230</w>
       <h>50</h>
     </coordinates>
@@ -825,7 +748,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1630</x>
-      <y>1000</y>
+      <y>930</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -837,13 +760,13 @@ bg=green</panel_attributes>
 unitDataStructure: link: (UnitDataStructure)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1690</x>
-      <y>1090</y>
+      <y>1020</y>
       <w>30</w>
       <h>100</h>
     </coordinates>
@@ -856,7 +779,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1630</x>
-      <y>1170</y>
+      <y>1100</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -868,13 +791,13 @@ bg=yellow</panel_attributes>
 logicalRecords: link[]: (LogicalRecord)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1690</x>
-      <y>1260</y>
+      <y>1190</y>
       <w>30</w>
       <h>80</h>
     </coordinates>
@@ -887,7 +810,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1940</x>
-      <y>1100</y>
+      <y>1030</y>
       <w>370</w>
       <h>110</h>
     </coordinates>
@@ -901,13 +824,13 @@ typeOfStatisticalUnit: string(enum)
 parentUnitTypes?: link[]: (UnitType)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2290</x>
-      <y>1060</y>
+      <y>990</y>
       <w>80</w>
       <h>70</h>
     </coordinates>
@@ -920,7 +843,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>2310</x>
-      <y>1280</y>
+      <y>1210</y>
       <w>230</w>
       <h>100</h>
     </coordinates>
@@ -932,13 +855,13 @@ bg=green</panel_attributes>
 unitType: link: (UnitType)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2300</x>
-      <y>1180</y>
+      <y>1110</y>
       <w>90</w>
       <h>120</h>
     </coordinates>
@@ -951,7 +874,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1740</x>
-      <y>1560</y>
+      <y>1490</y>
       <w>720</w>
       <h>80</h>
     </coordinates>
@@ -964,7 +887,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1870</x>
-      <y>1380</y>
+      <y>1310</y>
       <w>130</w>
       <h>40</h>
     </coordinates>
@@ -977,7 +900,7 @@ bg=green</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2230</x>
-      <y>1540</y>
+      <y>1470</y>
       <w>230</w>
       <h>140</h>
     </coordinates>
@@ -990,7 +913,7 @@ bg=green</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1420</x>
-      <y>1750</y>
+      <y>1680</y>
       <w>240</w>
       <h>110</h>
     </coordinates>
@@ -1004,13 +927,13 @@ sourceComponents: link[]: (InstanceVariable)
 targetComponents: link[]: (InstanceVariable)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>1840</x>
-      <y>1740</y>
+      <y>1670</y>
       <w>540</w>
       <h>180</h>
     </coordinates>
@@ -1029,13 +952,13 @@ universes: link[]: (Universe)
 parentPopulations?: link[]: (Population)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2590</x>
-      <y>1320</y>
+      <y>1250</y>
       <w>250</w>
       <h>100</h>
     </coordinates>
@@ -1047,13 +970,13 @@ bg=green</panel_attributes>
 unitTypes: link[]: (UnitType)
 
 bg=green</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2910</x>
-      <y>940</y>
+      <y>870</y>
       <w>550</w>
       <h>100</h>
     </coordinates>
@@ -1062,18 +985,18 @@ bg=green</panel_attributes>
 --&gt; object
 -
 administrativeDetailType: string(enum)
-  - DEFAULTLANGUAGE, ANNOTATION, ALIAS, URL, DOCUMENTATION, LOCALID, ORIGIN
+  - DEFAULTLANGUAGE, ANNOTATION, ALIAS, URL, DOCUMENTATION, LIFECYCLESTATUS, LOCALID
 values: string[]
 
 lt=.
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>2910</x>
-      <y>640</y>
+      <y>570</y>
       <w>340</w>
       <h>260</h>
     </coordinates>
@@ -1099,13 +1022,13 @@ agentInRoles?: link[]: (AgentInRole)
 
 lt=.
 bg=orange</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2360</x>
-      <y>1410</y>
+      <y>1340</y>
       <w>400</w>
       <h>460</h>
     </coordinates>
@@ -1118,7 +1041,7 @@ bg=orange</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1470</x>
-      <y>1700</y>
+      <y>1630</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -1131,7 +1054,7 @@ bg=orange</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1580</x>
-      <y>1700</y>
+      <y>1630</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -1144,20 +1067,20 @@ bg=orange</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>560</x>
-      <y>80</y>
+      <y>10</y>
       <w>320</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>*GSIM Physical Data Model - RAML Schema*
-Version: 2019-07-18, 13:16
+Version: 2019-07-01, 14:00
 fontsize=14</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>3080</x>
-      <y>890</y>
+      <y>820</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -1168,7 +1091,7 @@ fontsize=14</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1340</x>
-      <y>800</y>
+      <y>730</y>
       <w>450</w>
       <h>110</h>
     </coordinates>
@@ -1182,13 +1105,13 @@ dataResourceType?: string(enum)
 dataSets?: link[]: (UnitDataSet, DimensionalDataSet)
 
 bg=yellow</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1390</x>
-      <y>900</y>
+      <y>830</y>
       <w>30</w>
       <h>120</h>
     </coordinates>
@@ -1200,7 +1123,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1690</x>
-      <y>900</y>
+      <y>830</y>
       <w>30</w>
       <h>120</h>
     </coordinates>
@@ -1212,7 +1135,7 @@ bg=yellow</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2350</x>
-      <y>1700</y>
+      <y>1630</y>
       <w>80</w>
       <h>70</h>
     </coordinates>
@@ -1225,7 +1148,7 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1040</x>
-      <y>1520</y>
+      <y>1450</y>
       <w>250</w>
       <h>150</h>
     </coordinates>
@@ -1242,13 +1165,13 @@ lastUpdatedDate?: datetime
 lastUpdatedBy?: string
 
 bg=light_gray</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1280</x>
-      <y>1590</y>
+      <y>1520</y>
       <w>80</w>
       <h>40</h>
     </coordinates>
@@ -1261,7 +1184,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2410</x>
-      <y>770</y>
+      <y>700</y>
       <w>130</w>
       <h>90</h>
     </coordinates>
@@ -1273,7 +1196,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2220</x>
-      <y>790</y>
+      <y>720</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -1284,7 +1207,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2700</x>
-      <y>790</y>
+      <y>720</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -1296,7 +1219,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2390</x>
-      <y>620</y>
+      <y>550</y>
       <w>80</w>
       <h>70</h>
     </coordinates>
@@ -1309,7 +1232,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2770</x>
-      <y>1180</y>
+      <y>1110</y>
       <w>30</w>
       <h>160</h>
     </coordinates>
@@ -1322,7 +1245,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2300</x>
-      <y>1170</y>
+      <y>1100</y>
       <w>330</w>
       <h>170</h>
     </coordinates>
@@ -1335,7 +1258,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2300</x>
-      <y>1110</y>
+      <y>1040</y>
       <w>330</w>
       <h>40</h>
     </coordinates>
@@ -1348,7 +1271,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2490</x>
-      <y>1160</y>
+      <y>1090</y>
       <w>140</w>
       <h>140</h>
     </coordinates>
@@ -1361,7 +1284,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2680</x>
-      <y>1510</y>
+      <y>1440</y>
       <w>150</w>
       <h>40</h>
     </coordinates>
@@ -1373,7 +1296,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2680</x>
-      <y>1540</y>
+      <y>1470</y>
       <w>150</w>
       <h>120</h>
     </coordinates>
@@ -1385,7 +1308,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2900</x>
-      <y>1560</y>
+      <y>1490</y>
       <w>30</w>
       <h>70</h>
     </coordinates>
@@ -1398,7 +1321,7 @@ bg=light_gray</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>2830</x>
-      <y>860</y>
+      <y>790</y>
       <w>100</w>
       <h>30</h>
     </coordinates>
@@ -1410,7 +1333,7 @@ bg=light_gray</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>3140</x>
-      <y>1740</y>
+      <y>1670</y>
       <w>300</w>
       <h>150</h>
     </coordinates>
@@ -1425,13 +1348,13 @@ and codelists based on GSIM
 bg=light_gray
 fontsize=14
 lw=2</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2630</x>
-      <y>1700</y>
+      <y>1630</y>
       <w>530</w>
       <h>120</h>
     </coordinates>
@@ -1443,7 +1366,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1760</x>
-      <y>760</y>
+      <y>690</y>
       <w>80</w>
       <h>70</h>
     </coordinates>
@@ -1455,7 +1378,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>950</x>
-      <y>330</y>
+      <y>260</y>
       <w>60</w>
       <h>470</h>
     </coordinates>
@@ -1467,7 +1390,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>950</x>
-      <y>330</y>
+      <y>260</y>
       <w>60</w>
       <h>350</h>
     </coordinates>
@@ -1479,7 +1402,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>950</x>
-      <y>330</y>
+      <y>260</y>
       <w>60</w>
       <h>230</h>
     </coordinates>
@@ -1491,7 +1414,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>950</x>
-      <y>330</y>
+      <y>260</y>
       <w>60</w>
       <h>110</h>
     </coordinates>
@@ -1503,7 +1426,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>410</y>
+      <y>340</y>
       <w>450</w>
       <h>610</h>
     </coordinates>
@@ -1516,7 +1439,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>430</y>
+      <y>360</y>
       <w>70</w>
       <h>590</h>
     </coordinates>
@@ -1529,7 +1452,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>550</y>
+      <y>480</y>
       <w>70</w>
       <h>470</h>
     </coordinates>
@@ -1542,7 +1465,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>670</y>
+      <y>600</y>
       <w>70</w>
       <h>350</h>
     </coordinates>
@@ -1554,7 +1477,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>670</y>
+      <y>600</y>
       <w>70</w>
       <h>350</h>
     </coordinates>
@@ -1566,7 +1489,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>520</y>
+      <y>450</y>
       <w>450</w>
       <h>500</h>
     </coordinates>
@@ -1578,7 +1501,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>640</y>
+      <y>570</y>
       <w>450</w>
       <h>380</h>
     </coordinates>
@@ -1590,7 +1513,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>760</y>
+      <y>690</y>
       <w>450</w>
       <h>260</h>
     </coordinates>
@@ -1602,7 +1525,7 @@ lw=2</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>790</y>
+      <y>720</y>
       <w>70</w>
       <h>230</h>
     </coordinates>
@@ -1614,32 +1537,32 @@ lw=2</panel_attributes>
     <id>Text</id>
     <coordinates>
       <x>1210</x>
-      <y>950</y>
+      <y>880</y>
       <w>80</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>consumes /
 produces
 style=wordwrap</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Text</id>
     <coordinates>
       <x>1520</x>
-      <y>950</y>
+      <y>880</y>
       <w>130</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>consumes / produces
 style=wordwrap</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>370</y>
+      <y>300</y>
       <w>230</w>
       <h>150</h>
     </coordinates>
@@ -1651,7 +1574,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>480</y>
+      <y>410</y>
       <w>230</w>
       <h>40</h>
     </coordinates>
@@ -1663,7 +1586,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>490</y>
+      <y>420</y>
       <w>230</w>
       <h>150</h>
     </coordinates>
@@ -1675,7 +1598,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1230</x>
-      <y>490</y>
+      <y>420</y>
       <w>230</w>
       <h>270</h>
     </coordinates>
@@ -1687,7 +1610,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1820</x>
-      <y>640</y>
+      <y>570</y>
       <w>100</w>
       <h>550</h>
     </coordinates>
@@ -1699,7 +1622,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1470</x>
-      <y>640</y>
+      <y>570</y>
       <w>450</w>
       <h>550</h>
     </coordinates>
@@ -1711,7 +1634,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1910</x>
-      <y>600</y>
+      <y>530</y>
       <w>650</w>
       <h>260</h>
     </coordinates>
@@ -1724,7 +1647,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>1910</x>
-      <y>580</y>
+      <y>510</y>
       <w>670</w>
       <h>280</h>
     </coordinates>
@@ -1736,32 +1659,32 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>2030</x>
-      <y>570</y>
+      <x>1940</x>
+      <y>500</y>
       <w>130</w>
       <h>20</h>
     </coordinates>
     <panel_attributes>informationProviders
 style=wordwrap</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>2030</x>
-      <y>610</y>
+      <x>1940</x>
+      <y>540</y>
       <w>130</w>
       <h>20</h>
     </coordinates>
     <panel_attributes>informationConsumers
 style=wordwrap</panel_attributes>
-    <additional_attributes/>
+    <additional_attributes />
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>730</x>
-      <y>310</y>
+      <y>240</y>
       <w>30</w>
       <h>60</h>
     </coordinates>
@@ -1774,7 +1697,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>910</x>
-      <y>370</y>
+      <y>300</y>
       <w>100</w>
       <h>40</h>
     </coordinates>
@@ -1787,7 +1710,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>890</x>
-      <y>450</y>
+      <y>380</y>
       <w>400</w>
       <h>650</h>
     </coordinates>
@@ -1800,7 +1723,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>870</x>
-      <y>450</y>
+      <y>380</y>
       <w>780</w>
       <h>690</h>
     </coordinates>
@@ -1813,7 +1736,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>540</x>
-      <y>70</y>
+      <y>0</y>
       <w>30</w>
       <h>1840</h>
     </coordinates>
@@ -1822,65 +1745,5 @@ fg=gray
 
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;1820.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1780</x>
-      <y>60</y>
-      <w>240</w>
-      <h>800</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-//ProvisionAgreement_DimensionalDataStructure</panel_attributes>
-    <additional_attributes>140.0;10.0;220.0;10.0;220.0;500.0;200.0;510.0;200.0;560.0;220.0;580.0;220.0;780.0;130.0;780.0;120.0;770.0;110.0;780.0;10.0;780.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1910</x>
-      <y>400</y>
-      <w>110</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-//DataResource_DataResource</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1890</x>
-      <y>0</y>
-      <w>80</w>
-      <h>70</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-//DataResource_DataResource</panel_attributes>
-    <additional_attributes>30.0;50.0;60.0;50.0;60.0;10.0;10.0;10.0;10.0;40.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1910</x>
-      <y>80</y>
-      <w>200</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-//DataResource_DataResource</panel_attributes>
-    <additional_attributes>180.0;20.0;100.0;20.0;90.0;10.0;80.0;20.0;10.0;20.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>1910</x>
-      <y>190</y>
-      <w>200</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-//DataResource_DataResource</panel_attributes>
-    <additional_attributes>180.0;20.0;100.0;20.0;90.0;10.0;80.0;20.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
