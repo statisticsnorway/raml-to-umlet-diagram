@@ -19,6 +19,6 @@ Veiw the generated diagram with UMLet. UMLet is a free, open-source UML tool wit
 5. Fix the layout
    * add lines/arrows, colors, text, ..
 
-# Generated Umlet diagram and documentation
-* [Physical data model Umlet diagram file](https://github.com/statisticsnorway/raml-to-umlet-diagram/blob/master/umlet_diagram_files/GSIM_physical_model.uxf)  (Download and open in UMLet or http://www.umletino.com/)
+# Generated UMLet diagram and documentation
+* [Physical data model UMLet diagram file](https://github.com/statisticsnorway/raml-to-umlet-diagram/blob/master/umlet_diagram_files/GSIM_physical_model.uxf)  (download and open in UMLet or http://www.umletino.com/)
 * [Physical data model documentation details](https://github.com/statisticsnorway/raml-to-umlet-diagram/blob/master/umlet_diagram_files/PhysicalDataModelDetails.md)

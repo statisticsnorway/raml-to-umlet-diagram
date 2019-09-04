@@ -5,6 +5,7 @@ from RamlObject import RamlObject
 import time
 from shutil import copyfile
 import os
+from DescriptionAndDisplayNameDocument import DescriptionAndDisplayNameDocument
 
 
     # Example of format-tagged "PanelAttributes-text" in the Umlet diagram-file (.uxf):
@@ -24,6 +25,8 @@ class UmletDiagram():
 
     treeFile = None
     umletXmlTree = None
+
+    documentation = DescriptionAndDisplayNameDocument()
 
     utils = Utils()
 
@@ -103,9 +106,16 @@ class UmletDiagram():
         umletAttr += "-\n"  # Horizontal line in UMLet-diagram.
 
         ramlProperties = ramlObject["types"][ramlTypes]["properties"]  # E.g. "identifierComponent", "measureComponent", ...
+        self.documentation.addDocForObject("  \n  #### " + gsimName + "  \n")
+        self.documentation.addDocForObject("_" + str(ramlObject["types"][ramlTypes]["description"]) + "_  \n")
         if ramlProperties:
             for ramlProperty in ramlProperties:
+                self.documentation.addDocForObject("  * " + str(ramlProperty) + "  \n")
                 umletAttr += ramlProperty + ": "  #(* * = bold text)
+                if "?" in str(ramlProperty):
+                    self.documentation.addDocForObject("      * Mandatory: False  \n")
+                else:
+                    self.documentation.addDocForObject("      * Mandatory: True  \n")
                 if "(Link.types)" in ramlObject["types"][ramlTypes]["properties"][ramlProperty]:
                     # identifierComponents: link[] (IdentifierComponent)
                     ramlPropType = str(ramlObject["types"][ramlTypes]["properties"][ramlProperty]["type"])
@@ -113,20 +123,25 @@ class UmletDiagram():
                     ramlPropLinkTypes = str(ramlObject["types"][ramlTypes]["properties"][ramlProperty]["(Link.types)"])
                     ramlPropLinkTypes = ramlPropLinkTypes.replace("[","").replace("]","").replace("'","")
                     umletAttr += "link" + ramlPropType + ": (" + ramlPropLinkTypes + ")"
+                    self.documentation.addDocForObject("      * Link to: *_" + str(ramlPropLinkTypes) + "_*  \n")
                     # TODO: Generate Umlet diagram relations (arrows)???
                     #self.umletRelations.append(self.createUMLetRelation(str(ramlTypes) + "_" + ramlPropLinkTypes ,10, (self.relationCount*60)+120))
                     #self.relationCount += 1
                 elif "type" in ramlObject["types"][ramlTypes]["properties"][ramlProperty]:
                     ramlPropType = ramlObject["types"][ramlTypes]["properties"][ramlProperty]["type"]  # E.g. "string"
                     umletAttr += ramlPropType
+                    self.documentation.addDocForObject("      * Type: " + str(ramlPropType) + "  \n")
                     if "enum" in ramlObject["types"][ramlTypes]["properties"][ramlProperty]:
                         ramlPropEnum = ramlObject["types"][ramlTypes]["properties"][ramlProperty]["enum"]  # E.g. "enum --> IDENTIFIER, ATTRIBUTE, MEASURE"
                         umletAttr += "(enum)\n  - " + ", ".join(ramlPropEnum)
+                        self.documentation.addDocForObject("      * Enum: " + str(ramlPropEnum) + "  \n")
                 if "displayName" in ramlObject["types"][ramlTypes]["properties"][ramlProperty]:
                     ramlPropDisplayName = ramlObject["types"][ramlTypes]["properties"][ramlProperty]["displayName"]
+                    self.documentation.addDocForObject("      * Label: " + str(ramlPropDisplayName) + "  \n")
                     #print(ramlPropDisplayName)
                 if "description" in ramlObject["types"][ramlTypes]["properties"][ramlProperty]:
                     ramlPropDescription = ramlObject["types"][ramlTypes]["properties"][ramlProperty]["description"]
+                    self.documentation.addDocForObject("      * Description: " + str(ramlPropDescription) + "  \n")
                     #print(ramlPropDescription)
                 umletAttr += "\n"
         if self.getRamlFileName(gsimName) in self.abstractRamlFiles:
@@ -184,6 +199,8 @@ class UmletDiagram():
     def generateUmletDiagram(self):
         self.readUmletXmlFile(self.umletFileName)  # <-- NB! The "umletFileName" must either be a new (empty) Umlet uxf-file, or an existing Umlet diagram (uxf-file) to be updated.
 
+        self.documentation.addDocForObject("# Physical data model documentation details\n")
+
         for ramlFile in self.allRamlFiles:
             gsimName = self.getGsimName(ramlFile)
             if self.gsimObjectExistInUmletDiagram(gsimName):
@@ -198,6 +215,7 @@ class UmletDiagram():
         print(".. " + str(self.numOfNewRamlObjectsAdded) + " new GSIM/RAML class object(s) added to Umlet diagram.")
         print(".. " + str(self.numOfUpdatedRamlObjects) + " existing GSIM/RAML class object(s) updated in Umlet diagram.")
 
+        self.documentation.writeDocAsMdFile()
 
 # RUN "Main method"
 if  __name__ =='__main__':
