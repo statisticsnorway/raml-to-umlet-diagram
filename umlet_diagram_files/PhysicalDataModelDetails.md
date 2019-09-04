@@ -1,6 +1,6 @@
-# Physical data model details
+# Physical data model documentation details
 
-#### AdministrativeRegister  
+  #### AdministrativeRegister  
 _A source of administrative information which is obtained from an external organisation (or sometimes from another department of the same organisation)_  
   * supplierIdentifier  
       * Mandatory: True  
@@ -8,7 +8,7 @@ _A source of administrative information which is obtained from an external organ
       * Label: Supplier identifier  
       * Description: An identifier for the supplier of the Administrative Register  
 
-#### Agent  
+  #### Agent  
 _An actor that performs a role in relation to the statistical Business Process._  
   * agentType  
       * Mandatory: True  
@@ -31,7 +31,7 @@ _An actor that performs a role in relation to the statistical Business Process._
       * Label: Agent details  
       * Description: Agent details (e.g. contackt adress, email, phone, mobile ...).  
 
-#### AgentInRole  
+  #### AgentInRole  
 _Reflects an agent acting in a specific role._  
   * role  
       * Mandatory: True  
@@ -42,7 +42,7 @@ _Reflects an agent acting in a specific role._
       * Link to: *_Agent_*  
       * Label: Agents  
 
-#### Assessment  
+  #### Assessment  
 _The result of the analysis of the quality and effectiveness of any activity undertaken by a statistical organization and recommendations on how these can be improved._  
   * datesAssessed  
       * Mandatory: True  
@@ -69,7 +69,7 @@ _The result of the analysis of the quality and effectiveness of any activity und
       * Link to: *_EnvironmentChange, InformationRequest_*  
       * Label: Statistical needs  
 
-#### BusinessCase  
+  #### BusinessCase  
 _A proposal for a body of work that will deliver outputs designed to achieve outcomes. A Business Case will provide the reasoning for undertaking a Statistical Support Program to initiate a new Statistical Program Design for an existing Statistical Program, or an entirely new Statistical Program, as well as the details of the change proposed._  
   * dateInitiated?  
       * Mandatory: False  
@@ -123,10 +123,10 @@ _A proposal for a body of work that will deliver outputs designed to achieve out
       * Link to: *_ChangeDefinition_*  
       * Label: Change definitions  
 
-#### BusinessFunction  
+  #### BusinessFunction  
 _Something an enterprise does, or needs to do, in order to achieve its objectives._  
 
-#### BusinessProcess  
+  #### BusinessProcess  
 _The set of Process Steps to perform one of more Business Functions to deliver a Statistical Program Cycle or Statistical Support Program._  
   * processSteps  
       * Mandatory: True  
@@ -151,7 +151,7 @@ _The set of Process Steps to perform one of more Business Functions to deliver a
       * Label: Date ended  
       * Description: Last date of validity.  
 
-#### BusinessService  
+  #### BusinessService  
 _A means of performing a Business Function (an ability that an organization possesses, typically expressed in general and high level terms and requiring a combination of organization, people, processes and technology to achieve)._  
   * location?  
       * Mandatory: False  
@@ -164,14 +164,14 @@ _A means of performing a Business Function (an ability that an organization poss
       * Label: Service interface  
       * Description: Specifies how to communicate with the service.  
 
-#### ChangeDefinition  
+  #### ChangeDefinition  
 _A structured, well-defined specification for a proposed change._  
   * populations?  
       * Mandatory: False  
       * Link to: *_Population_*  
       * Label: Populations  
 
-#### DataHarvesting  
+  #### DataHarvesting  
 _A concrete and usable tool to gather information from the Internet._  
   * dataHarvestingType  
       * Mandatory: True  
@@ -180,7 +180,7 @@ _A concrete and usable tool to gather information from the Internet._
       * Label: Data harvester type  
       * Description: Method for harvesting data  
 
-#### DataResource  
+  #### DataResource  
 _An organized collection of stored information made of one or more Data Sets._  
   * dataResourceType?  
       * Mandatory: False  
@@ -192,7 +192,7 @@ _An organized collection of stored information made of one or more Data Sets._
       * Link to: *_UnitDataSet, DimensionalDataSet_*  
       * Label: Data Sets  
 
-#### DescribedValueDomain  
+  #### DescribedValueDomain  
 _A Value Domain defined by an expression._  
   * minValue?  
       * Mandatory: False  
@@ -225,21 +225,21 @@ _A Value Domain defined by an expression._
       * Label: Max decimals  
       * Description: A Value Domain defined by an expression.  
 
-#### DimensionalDataSet  
+  #### DimensionalDataSet  
 _A collection of dimensional data that conforms to a known structure._  
   * dimensionalDataStructure  
       * Mandatory: True  
       * Link to: *_DimensionalDataStructure_*  
       * Label: Dimensional data structure  
 
-#### DimensionalDataStructure  
+  #### DimensionalDataStructure  
 _Describes the structure of a Dimensional Data Set._  
   * instanceVariables  
       * Mandatory: True  
       * Link to: *_InstanceVariable_*  
       * Label: Instance variables  
 
-#### EnumeratedValueDomain  
+  #### EnumeratedValueDomain  
 _A Value Domain expressed as a list of Categories and associated Codes._  
   * klassUrl  
       * Mandatory: True  
@@ -247,7 +247,7 @@ _A Value Domain expressed as a list of Categories and associated Codes._
       * Label: Klass url  
       * Description: The url to KLASS codelist.  
 
-#### EnvironmentChange  
+  #### EnvironmentChange  
 _A requirement for change  that originates from a change in the operating environment of the statistical organization._  
   * environmentChangeType  
       * Mandatory: True  
@@ -281,7 +281,7 @@ _A requirement for change  that originates from a change in the operating enviro
       * Label: Other change  
       * Description: Other change  
 
-#### InformationRequest  
+  #### InformationRequest  
 _An outline of a need for new information required for a particular purpose._  
   * coverageOfInformationRequired  
       * Mandatory: True  
@@ -298,7 +298,7 @@ _An outline of a need for new information required for a particular purpose._
       * Link to: *_SubjectField_*  
       * Label: Subject fields  
 
-#### InstanceVariable  
+  #### InstanceVariable  
 _The use of a Represented Variable within a Data Set. It may include information about the source of the data._  
   * representedVariable  
       * Mandatory: True  
@@ -356,7 +356,7 @@ _The use of a Represented Variable within a Data Set. It may include information
       * Label: Mandatory  
       * Description: Is the variable mandatory or not  
 
-#### InstanceVariableRelationship  
+  #### InstanceVariableRelationship  
 _This reflects that there could be a structure within the Logical Record and Data Structure, for example several fields can together represent a structured field (e.g. an address), or the record can be structured as in the case of an XML file conformant to a schema. Another example is the relationship between attributes (source, quality, ..) and measures._  
   * relationType  
       * Mandatory: True  
@@ -375,7 +375,7 @@ _This reflects that there could be a structure within the Logical Record and Dat
       * Label: Target components  
       * Description: The relation target instance variables (components), e.g. "address"  
 
-#### LogicalRecord  
+  #### LogicalRecord  
 _Describes a type of Unit Data Record for one Unit Type within a Unit Data Set._  
   * unitType  
       * Mandatory: True  
@@ -406,7 +406,7 @@ _Describes a type of Unit Data Record for one Unit Type within a Unit Data Set._
       * Link to: *_InstanceVariable_*  
       * Label: Instance variables  
 
-#### MappingRawDataToInputData  
+  #### MappingRawDataToInputData  
 _Mapping elements from external Raw Data Object Store to Input Data (InstanceVariable)._  
   * id  
       * Mandatory: True  
@@ -448,10 +448,10 @@ _Mapping elements from external Raw Data Object Store to Input Data (InstanceVar
       * Label: Last updated by  
       * Description: Created or updated by.  
 
-#### MeasurementType  
+  #### MeasurementType  
 _The Measurement Type defines the type of a measure e.g. mass or currency. The Measurement Type groups all Measurement Units, which can be converted into each other. A Measurement Type can have a standard Measurement Unit, which can be used for conversion between different Measurement Units._  
 
-#### MeasurementUnit  
+  #### MeasurementUnit  
 _A Measurement Unit is the metric for a measurement in terms of an official unit of measurement._  
   * measurementType?  
       * Mandatory: False  
@@ -468,7 +468,7 @@ _A Measurement Unit is the metric for a measurement in terms of an official unit
       * Label: Abbreviation  
       * Description: Abbreviation for the Measurement Unit e.g. kg for kilograms  
 
-#### OutputSpecification  
+  #### OutputSpecification  
 _Defines how Information Sets consumed by a Product are presented to Information Consumers._  
   * products?  
       * Mandatory: False  
@@ -479,7 +479,7 @@ _Defines how Information Sets consumed by a Product are presented to Information
       * Link to: *_Presentation_*  
       * Label: Presentations  
 
-#### ParameterInput  
+  #### ParameterInput  
 _Inputs used to specify which configuration should be used for a specific Process Step which has been designed to be configurable._  
   * parameterDataType  
       * Mandatory: True  
@@ -498,7 +498,7 @@ _Inputs used to specify which configuration should be used for a specific Proces
       * Label: Parameter value  
       * Description: The content of the parameter  
 
-#### Population  
+  #### Population  
 _The total membership of a defined class of people, objects or events._  
   * populationType  
       * Mandatory: True  
@@ -531,7 +531,7 @@ _The total membership of a defined class of people, objects or events._
       * Link to: *_Population_*  
       * Label: Parent populations  
 
-#### Presentation  
+  #### Presentation  
 _The way data and referential metadata are presented in a Product._  
   * presentationType  
       * Mandatory: True  
@@ -549,7 +549,7 @@ _The way data and referential metadata are presented in a Product._
       * Link to: *_DimensionalDataSet, UnitDataSet_*  
       * Label: Informationsets to present  
 
-#### ProcessControl  
+  #### ProcessControl  
 _A set of decision points which determine the flow between the Process Steps used to perform a Business Process._  
   * startEvent?  
       * Mandatory: False  
@@ -562,7 +562,7 @@ _A set of decision points which determine the flow between the Process Steps use
       * Label: Process control status  
       * Description: Success or error, typically using a coded value.  
 
-#### ProcessControlDesign  
+  #### ProcessControlDesign  
 _The specification of the decision points required during the execution of a Business Process._  
   * rules?  
       * Mandatory: False  
@@ -573,7 +573,7 @@ _The specification of the decision points required during the execution of a Bus
       * Link to: *_ProcessControl_*  
       * Label: Process control  
 
-#### ProcessDesign  
+  #### ProcessDesign  
 _The specification of how a Process Step will be performed. This includes specifying the types of Process Inputs required and the type of Process Outputs that will be produced._  
   * processSteps?  
       * Mandatory: False  
@@ -608,7 +608,7 @@ _The specification of how a Process Step will be performed. This includes specif
       * Link to: *_ProcessPattern_*  
       * Label: Process patterns  
 
-#### ProcessExecutionLog  
+  #### ProcessExecutionLog  
 _The Process Execution Log captures the output of a Process Step which is not directly related to the Transformed Output it produced. It may include data that was recorded during the real time execution of the Process Step._  
   * processId?  
       * Mandatory: False  
@@ -646,7 +646,7 @@ _The Process Execution Log captures the output of a Process Step which is not di
       * Label: Log severity  
       * Description: The severity for the event that occurred during the process execution.  
 
-#### ProcessInputSpecification  
+  #### ProcessInputSpecification  
 _A record of the types of inputs required for a Process Design._  
   * prosessInputType  
       * Mandatory: True  
@@ -654,17 +654,17 @@ _A record of the types of inputs required for a Process Design._
       * Label: Prosess input type  
       * Description: This denotes the type of object which can be used as an input.  
 
-#### ProcessMethod  
+  #### ProcessMethod  
 _A specification of the technique which will be used to perform the unit of work._  
   * rules?  
       * Mandatory: False  
       * Link to: *_Rule_*  
       * Label: Rules  
 
-#### ProcessMetric  
+  #### ProcessMetric  
 _A Process Output whose purpose is to measure and report some aspect of how the Process Step performed during execution._  
 
-#### ProcessOutputSpecification  
+  #### ProcessOutputSpecification  
 _A record of the types of outputs required for a Process Design._  
   * processOutputType  
       * Mandatory: True  
@@ -672,10 +672,10 @@ _A record of the types of outputs required for a Process Design._
       * Label: Process output type  
       * Description: This denotes the type of object which can be used as an output.  
 
-#### ProcessPattern  
+  #### ProcessPattern  
 _A nominated set of Process  Designs, and associated Process Control Designs (flow), which have been highlighted for possible reuse._  
 
-#### ProcessStep  
+  #### ProcessStep  
 _A Process Step is a work package that performs a Business Process. A Process Step implements the Process Step Design specified in order to produce the outputs for which the Process Step was designed._  
   * isComprehensive  
       * Mandatory: True  
@@ -695,7 +695,7 @@ _A Process Step is a work package that performs a Business Process. A Process St
       * Link to: *_ProcessControl_*  
       * Label: Process control  
 
-#### ProcessStepInstance  
+  #### ProcessStepInstance  
 _An executed step in a Business Process. A Process Step Instance specifies the actual inputs to and outputs from for an occurrence of a Process Step._  
   * parameterInputs?  
       * Mandatory: False  
@@ -722,7 +722,7 @@ _An executed step in a Business Process. A Process Step Instance specifies the a
       * Link to: *_ProcessExecutionLog_*  
       * Label: Process execution logs  
 
-#### ProcessSupportInput  
+  #### ProcessSupportInput  
 _A form of Process Input that influences the work performed by the Process Step, and therefore influences its outcome._  
   * processSupportDataType?  
       * Mandatory: False  
@@ -740,14 +740,14 @@ _A form of Process Input that influences the work performed by the Process Step,
       * Label: Process support value  
       * Description: The content of the ProcessSupportInput  
 
-#### Product  
+  #### Product  
 _A package of content that can be disseminated as a whole._  
   * presentations  
       * Mandatory: True  
       * Link to: *_Presentation_*  
       * Label: Presentations  
 
-#### Protocol  
+  #### Protocol  
 _The mechanism for exchanging information through an Exchange Channel._  
   * protocolType  
       * Mandatory: True  
@@ -756,7 +756,7 @@ _The mechanism for exchanging information through an Exchange Channel._
       * Label: Protocol type  
       * Description: Type of protocol.  
 
-#### ProvisionAgreement  
+  #### ProvisionAgreement  
 _The legal or other basis by which two parties agree to exchange data._  
   * regulation  
       * Mandatory: True  
@@ -803,10 +803,10 @@ _The legal or other basis by which two parties agree to exchange data._
       * Link to: *_UnitDataStructure, DimensionalDataStructure_*  
       * Label: Agreed Data Structures  
 
-#### Questionnaire  
+  #### Questionnaire  
 _A concrete and usable tool to elicit information from observation units._  
 
-#### RepresentedVariable  
+  #### RepresentedVariable  
 _A combination of a characteristic of a population to be measured and how that measure will be represented._  
   * variable  
       * Mandatory: True  
@@ -821,10 +821,10 @@ _A combination of a characteristic of a population to be measured and how that m
       * Link to: *_EnumeratedValueDomain, DescribedValueDomain_*  
       * Label: Substantive value domain  
 
-#### Role  
+  #### Role  
 _The responsible function involved in the statistical Business Process._  
 
-#### Rule  
+  #### Rule  
 _A specific mathematical or logical expression which can be evaluated to determine specific behavior._  
   * algorithm?  
       * Mandatory: False  
@@ -853,7 +853,7 @@ _A specific mathematical or logical expression which can be evaluated to determi
       * Label: Is system executable  
       * Description: Whether the rule is formatted to be executed by a system, or is only documentary.  
 
-#### StatisticalProgram  
+  #### StatisticalProgram  
 _A set of activities, which may be repeated, to investigate characteristics of a given Population. It describes the purpose and context of a set of Business Process within the context of the relevant Statistical Program Cycles._  
   * parentStatisticalPrograms?  
       * Mandatory: False  
@@ -914,7 +914,7 @@ _A set of activities, which may be repeated, to investigate characteristics of a
       * Label: Legal frameworks  
       * Description: Description of the legal framework  
 
-#### StatisticalProgramCycle  
+  #### StatisticalProgramCycle  
 _A set of activities to investigate characteristics of a given Population for a particular reference period._  
   * businessProcesses?  
       * Mandatory: False  
@@ -931,7 +931,7 @@ _A set of activities to investigate characteristics of a given Population for a 
       * Label: Reference period end  
       * Description: Last date of validity  
 
-#### StatisticalProgramDesign  
+  #### StatisticalProgramDesign  
 _The specification of the resources required, processes used and description of relevant methodological information about the set of activities undertaken to investigate characteristics of a given Population._  
   * businessCases?  
       * Mandatory: False  
@@ -971,7 +971,7 @@ _The specification of the resources required, processes used and description of 
       * Label: Conceptual frameworks  
       * Description: Description of the conceptual framework  
 
-#### StatisticalSupportProgram  
+  #### StatisticalSupportProgram  
 _A program which is not related to the post-design cyclic production of statistical products, but is necessary to support cyclical production._  
   * statisticalProgramDesign?  
       * Mandatory: False  
@@ -1021,30 +1021,30 @@ _A program which is not related to the post-design cyclic production of statisti
       * Label: Significant events  
       * Description: A description of the real-world events which lead to the creation of the program  
 
-#### SubjectField  
+  #### SubjectField  
 _One or more Concept Systems used for the grouping of Concepts and Categories for the production of statistics._  
 
-#### TransformableInput  
+  #### TransformableInput  
 _A type of Process Input whose content goes into a Process Step and is changed in some way by the execution of that Process Step. Some or all of the content will be represented in the Transformed Output._  
 
-#### TransformedOutput  
+  #### TransformedOutput  
 _A Process Output (a result) which provides the reason for existence for the Process Step._  
 
-#### UnitDataSet  
+  #### UnitDataSet  
 _A collection of data that conforms to a known structure and describes aspects of one or more Units._  
   * unitDataStructure  
       * Mandatory: True  
       * Link to: *_UnitDataStructure_*  
       * Label: Unit data structure  
 
-#### UnitDataStructure  
+  #### UnitDataStructure  
 _Describes the structure of a Unit Data Set._  
   * logicalRecords  
       * Mandatory: True  
       * Link to: *_LogicalRecord_*  
       * Label: Logical records  
 
-#### UnitType  
+  #### UnitType  
 _A Unit Type is a class of objects of interest_  
   * typeOfStatisticalUnit  
       * Mandatory: True  
@@ -1057,21 +1057,21 @@ _A Unit Type is a class of objects of interest_
       * Link to: *_UnitType_*  
       * Label: Parent unit types  
 
-#### Universe  
+  #### Universe  
 _A defined class of people, entities, events, or objects, with no specification of time and geography, contextualizing a Unit Type._  
   * unitTypes  
       * Mandatory: True  
       * Link to: *_UnitType_*  
       * Label: Unit types  
 
-#### Variable  
+  #### Variable  
 _The use of a Concept as a characteristic of a Population intended to be measured._  
   * unitType  
       * Mandatory: True  
       * Link to: *_UnitType_*  
       * Label: Unit type  
 
-#### AdministrativeDetails  
+  #### AdministrativeDetails  
 _A generic and expandable key-value-store for adding present and future AdministrativeDetails-attributes to any information object._  
   * administrativeDetailType  
       * Mandatory: True  
@@ -1085,7 +1085,7 @@ _A generic and expandable key-value-store for adding present and future Administ
       * Label: Values  
       * Description: One or more values (a list) for this administrativeDetailType.  
 
-#### AgentDetails  
+  #### AgentDetails  
 _A generic and expandable key-value-store for adding present and future AgentDetails-attributes to the Agent-object._  
   * agentDetailType  
       * Mandatory: True  
@@ -1099,7 +1099,7 @@ _A generic and expandable key-value-store for adding present and future AgentDet
       * Label: Values  
       * Description: One or more values (a list) for this agentDetailType.  
 
-#### Concept  
+  #### Concept  
 _Unit of thought differentiated by characteristics._  
   * subjectFields?  
       * Mandatory: False  
@@ -1111,7 +1111,7 @@ _Unit of thought differentiated by characteristics._
       * Label: National concepts catalog  
       * Description: Link to national concepts catalog  
 
-#### DataSet  
+  #### DataSet  
 _An organized collection of data._  
   * dataSetState  
       * Mandatory: True  
@@ -1152,10 +1152,10 @@ _An organized collection of data._
       * Label: Metadata source path  
       * Description: The path (API endpoint, URI, catalog, ..) to the metadata describing the raw dataset.  
 
-#### DataStructure  
+  #### DataStructure  
 _Defines the structure of an organized collection of data (Data Set)._  
 
-#### ExchangeChannel  
+  #### ExchangeChannel  
 _A means of exchanging data._  
   * direction  
       * Mandatory: True  
@@ -1176,7 +1176,7 @@ _A means of exchanging data._
       * Link to: *_UnitDataSet, DimensionalDataSet_*  
       * Label: Produces Data Sets  
 
-#### IdentifiableArtefact  
+  #### IdentifiableArtefact  
 _IdentifiableArtefact is reusable abstract object (type). All identifiable objects inherits all attributes from this object (type)._  
   * id  
       * Mandatory: True  
@@ -1255,7 +1255,7 @@ _IdentifiableArtefact is reusable abstract object (type). All identifiable objec
       * Label: Agent in roles  
       * Description: Agent(s) acting in the Role(s) for this information object.  
 
-#### InformationResource  
+  #### InformationResource  
 _An abstract notion that is any organized collection of information._  
   * parentResource?  
       * Mandatory: False  
@@ -1266,10 +1266,10 @@ _An abstract notion that is any organized collection of information._
       * Link to: *_ProvisionAgreement, StatisticalProgram_*  
       * Label: Owner  
 
-#### InformationSet  
+  #### InformationSet  
 _Organized collections of statistical content._  
 
-#### MultilingualText  
+  #### MultilingualText  
 _A reusable type for supporting multilingual texts._  
   * languageCode  
       * Mandatory: True  
@@ -1283,13 +1283,13 @@ _A reusable type for supporting multilingual texts._
       * Label: Language text  
       * Description: The text (e.g. label, title, description)  
 
-#### ProcessInput  
+  #### ProcessInput  
 _Any instance of an information object which is supplied to a Process Step Instance at the time its execution is initiated._  
 
-#### ProcessOutput  
+  #### ProcessOutput  
 _Any instance of an information object which is produced by a Process Step as a result of its execution._  
 
-#### StatisticalNeed  
+  #### StatisticalNeed  
 _A requirement, request or other notification that will be considered by an organization. A Statistical Need does not necessarily have structure or format - it is a 'raw' need as received by the organization. A Statistical Need may be of a variety of types including Environmental Change or Information Request._  
   * dateCreated?  
       * Mandatory: False  
@@ -1302,7 +1302,7 @@ _A requirement, request or other notification that will be considered by an orga
       * Label: Statistical need status  
       * Description: Statistical need status  
 
-#### ValueDomain  
+  #### ValueDomain  
 _The permitted range of values for a characteristic of a variable_  
   * dataType  
       * Mandatory: True  
