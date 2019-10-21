@@ -94,20 +94,25 @@ class UmletDiagram():
 
     def createPanelAttributesForUmletClass(self, gsimName):
         umletAttr = ""
+        documentationUses = ""
         ramlObject = self.ramlObj.ramlFile2DictObject(gsimName + ".raml")
         for ramlTypes in ramlObject["types"]:
             umletAttr += "*/" + str(ramlTypes) + "/*\n"  # E.g. "LogicalRecord"  (* * = bold text)
             umletAttr += "-\n"  # Horizontal line in UMLet-diagram.
             if "type" in ramlObject["types"][ramlTypes]:
                 ramlUses = str(ramlObject["types"][ramlTypes]["type"]) \
-                            .replace("'", "").replace("[", "").replace("]", "").split(",")
+                            .replace("'", "").replace("[", "").replace("]", "").split(",")                
                 for ru in ramlUses:
                     umletAttr += "--> " + ru.strip().split(".")[0] + "\n"  # E.g. inherit "IdentifiableArtefact"
+                    documentationUses += "    * **" + ru.strip().split(".")[0] + "** \n"
         umletAttr += "-\n"  # Horizontal line in UMLet-diagram.
 
         ramlProperties = ramlObject["types"][ramlTypes]["properties"]  # E.g. "identifierComponent", "measureComponent", ...
-        self.documentation.addDocForObject("  \n  #### " + gsimName + "  \n")
+        self.documentation.addDocForObject("\n#### " + gsimName + "  \n")
         self.documentation.addDocForObject("_" + str(ramlObject["types"][ramlTypes]["description"]) + "_  \n")
+        if documentationUses:
+            self.documentation.addDocForObject("  * Inherit: \n")
+            self.documentation.addDocForObject( documentationUses )
         if ramlProperties:
             for ramlProperty in ramlProperties:
                 self.documentation.addDocForObject("  * " + str(ramlProperty) + "  \n")
