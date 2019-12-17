@@ -6,7 +6,7 @@ _Information about the model_
       * Mandatory: True  
       * Type: string  
       * Label: Current model version  
-      * Description: This version nested ProcessStepInstance inside the CodeBlocks attribute of ProcessStep  
+      * Description: This version adds shortName to all objects and dataType to InstanceVariable  
 
 #### AdministrativeRegister  
 _A source of administrative information which is obtained from an external organisation (or sometimes from another department of the same organisation)_  
@@ -151,8 +151,13 @@ _Something an enterprise does, or needs to do, in order to achieve its objective
 _The set of Process Steps to perform one of more Business Functions to deliver a Statistical Program Cycle or Statistical Support Program._  
   * Inherit: 
     * **IdentifiableArtefact** 
-  * processSteps  
+  * isPlaceholderProcess  
       * Mandatory: True  
+      * Type: boolean  
+      * Label: Is placeholder process  
+      * Description: If true this is a placeholder-process (only a grouping of other businessprocesses in a hierarchical manner), but without link(s) to any ProcessSteps.  
+  * processSteps?  
+      * Mandatory: False  
       * Link to: *_ProcessStep_*  
       * Label: Process steps  
   * businessFunctions?  
@@ -167,6 +172,10 @@ _The set of Process Steps to perform one of more Business Functions to deliver a
       * Mandatory: False  
       * Link to: *_BusinessProcess_*  
       * Label: Previous Business Process  
+  * parentBusinessProcess?  
+      * Mandatory: False  
+      * Link to: *_BusinessProcess_*  
+      * Label: Parent Business Process  
 
 #### BusinessService  
 _A means of performing a Business Function (an ability that an organization possesses, typically expressed in general and high level terms and requiring a combination of organization, people, processes and technology to achieve)._  
@@ -361,11 +370,6 @@ _The use of a Represented Variable within a Data Set. It may include information
       * Enum: ['IDENTIFIER', 'MEASURE', 'ATTRIBUTE']  
       * Label: Data Structure Component Type  
       * Description: The data structure component type (identifier, measure or attribute) of the instance variable.  
-  * shortName  
-      * Mandatory: True  
-      * Type: string  
-      * Label: Short name  
-      * Description: A short technical name. (Avoid special characters not supported as variable names in common programming languages).  
   * sentinelValueDomain?  
       * Mandatory: False  
       * Link to: *_EnumeratedValueDomain, DescribedValueDomain_*  
@@ -402,6 +406,11 @@ _The use of a Represented Variable within a Data Set. It may include information
       * Type: boolean  
       * Label: Mandatory  
       * Description: Is the variable mandatory or not  
+  * physicalDataType?  
+      * Mandatory: False  
+      * Type: string  
+      * Label: Data type  
+      * Description: Data type of instance variable  
 
 #### InstanceVariableRelationship  
 _This reflects that there could be a structure within the Logical Record and Data Structure, for example several fields can together represent a structured field (e.g. an address), or the record can be structured as in the case of an XML file conformant to a schema. Another example is the relationship between attributes (source, quality, ..) and measures._  
@@ -432,11 +441,6 @@ _Describes a type of Unit Data Record for one Unit Type within a Unit Data Set._
       * Mandatory: True  
       * Link to: *_UnitType_*  
       * Label: Unit type  
-  * shortName  
-      * Mandatory: True  
-      * Type: string  
-      * Label: Short name  
-      * Description: A short technical name. (Avoid special characters not supported as variable or object names in common programming languages).  
   * parentLogicalRecord?  
       * Mandatory: False  
       * Link to: *_LogicalRecord_*  
@@ -787,6 +791,10 @@ _A Process Step is a work package that performs a Business Process. A Process St
       * Mandatory: False  
       * Link to: *_ProcessControl_*  
       * Label: Process control  
+  * previousProcessStep?  
+      * Mandatory: False  
+      * Link to: *_ProcessStep_*  
+      * Label: Previous process step  
 
 #### ProcessStepInstance  
 _An executed step in a Business Process. A Process Step Instance specifies the actual inputs to and outputs from for an occurrence of a Process Step._  
@@ -1158,12 +1166,6 @@ _A type of Process Input whose content goes into a Process Step and is changed i
   * Inherit: 
     * **IdentifiableArtefact** 
     * **ProcessInput** 
-  * inputType  
-      * Mandatory: True  
-      * Type: string  
-      * Enum: ['DATASET']  
-      * Label: Input type  
-      * Description: Type of input resource (e.g. UnitDataSet, DimensionalDataSet, ...)  
   * inputId  
       * Mandatory: True  
       * Link to: *_UnitDataSet, DimensionalDataSet_*  
@@ -1366,6 +1368,11 @@ _IdentifiableArtefact is reusable abstract object (type). All identifiable objec
       * Type: MultilingualText.MultilingualText[]  
       * Label: Description  
       * Description: The description of the information object  
+  * shortName?  
+      * Mandatory: False  
+      * Type: string  
+      * Label: Short name  
+      * Description: A short technical name. (Avoid special characters not supported as variable names in common programming languages).  
   * administrativeStatus?  
       * Mandatory: False  
       * Type: string  

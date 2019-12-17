@@ -1,6 +1,7 @@
 #%RAML 1.0 Library
 uses:
   Link: ./annotation/Link.raml
+  Doc: ./annotation/Doc.raml
 
 types:
   # COMMENT:
@@ -13,6 +14,6 @@ types:
     properties:
       model_version:
         type: string
-        default: "0.7"
-        description: This version nested ProcessStepInstance inside the CodeBlocks attribute of ProcessStep
+        default: "0.9"
+        description: This version adds shortName to all objects and dataType to InstanceVariable
         displayName: Current model version

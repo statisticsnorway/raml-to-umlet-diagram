@@ -86,9 +86,11 @@ class UmletDiagram():
                 return panel_attributes
 
     def getUmletPanelAttributeDetail(self, umletPanelAttribute, umletDetail):
+        # e.g. Umlet panel elemement "bg=black" and "fg=white"
         panelLines = umletPanelAttribute.text.split("\n")
         for line in panelLines:
-            if umletDetail+"=" in line or umletDetail+" =" in line:
+            #if umletDetail + "=" in line or umletDetail+" =" in line:
+            if line.strip().startswith(umletDetail + "="):
                 return line
         return ""
 
@@ -149,6 +151,14 @@ class UmletDiagram():
                     self.documentation.addDocForObject("      * Description: " + str(ramlPropDescription) + "  \n")
                     #print(ramlPropDescription)
                 umletAttr += "\n"
+        if "(Doc.objectGsimGroup)" in ramlObject["types"][ramlTypes]:
+            # TODO
+            None
+        if "(Doc.objectMicroService)" in ramlObject["types"][ramlTypes]:
+            ramlObjectMicroService = "\ncustomelement=\n"
+            ramlObjectMicroService += "drawRectangle(2,2,70,17)fg=red bg=gray lt=- transparency=0\n"
+            ramlObjectMicroService += "drawText(\"*" + str(ramlObject["types"][ramlTypes]["(Doc.objectMicroService)"]).title() + "*\", 5, 15, left) fg=white\n"
+            umletAttr += ramlObjectMicroService
         if self.getRamlFileName(gsimName) in self.abstractRamlFiles:
             umletAttr += "\n"
             umletAttr += "lt=." # dashed borderline in the Umlet-diagram
