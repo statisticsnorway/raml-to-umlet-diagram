@@ -1,32 +1,16 @@
 ﻿#%RAML 1.0 Library
 uses:
   Link: ./annotation/Link.raml
-  Doc: ./annotation/Doc.raml
   IdentifiableArtefact: ./abstract/IdentifiableArtefact.raml
   Concept: ./abstract/Concept.raml
 
 types:
   UnitType:
-    (Doc.objectGsimGroup): CONCEPT
-    (Doc.objectMicroService): CONCEPT
     description: A Unit Type is a class of objects of interest
     displayName: Unit type
     type: [ IdentifiableArtefact.IdentifiableArtefact, Concept.Concept ]
 
     properties:
-      typeOfStatisticalUnit:
-        type: string
-        description: Type of unit.
-        displayName: Type of statistical unit
-        enum:
-          - ENTERPRISE
-          - ESTABLISHMENT
-          - PERSON
-          - FAMILY
-          - HOUSEHOLD
-          - SHAREHOLDER
-          - MUNICIPALITY
-          - NOT_APPLICABLE  # Used only for AttributeComponents.
 
       parentUnitTypes?:
         type: string[]

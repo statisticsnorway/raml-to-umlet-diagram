@@ -1,7 +1,6 @@
 #%RAML 1.0 Library
 uses:
   Link: ./annotation/Link.raml
-  Doc: ./annotation/Doc.raml
 
 types:
   # COMMENT:
@@ -14,6 +13,6 @@ types:
     properties:
       model_version:
         type: string
-        default: "0.9"
-        description: This version adds shortName to all objects and dataType to InstanceVariable
+        default: "0.14"
+        description: Changes in schemas related to DAPLA JupyterHub and new user interfaces.
         displayName: Current model version

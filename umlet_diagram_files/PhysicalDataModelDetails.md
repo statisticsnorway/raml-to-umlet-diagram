@@ -6,7 +6,7 @@ _Information about the model_
       * Mandatory: True  
       * Type: string  
       * Label: Current model version  
-      * Description: This version adds shortName to all objects and dataType to InstanceVariable  
+      * Description: Changes in schemas related to DAPLA JupyterHub and new user interfaces.  
 
 #### AdministrativeRegister  
 _A source of administrative information which is obtained from an external organisation (or sometimes from another department of the same organisation)_  
@@ -233,6 +233,10 @@ _A Value Domain defined by an expression._
   * Inherit: 
     * **IdentifiableArtefact** 
     * **ValueDomain** 
+  * measurementUnit?  
+      * Mandatory: False  
+      * Link to: *_MeasurementUnit_*  
+      * Label: Measurement unit  
   * minValue?  
       * Mandatory: False  
       * Type: number  
@@ -289,11 +293,11 @@ _A Value Domain expressed as a list of Categories and associated Codes._
   * Inherit: 
     * **IdentifiableArtefact** 
     * **ValueDomain** 
-  * klassUrl  
+  * klassUrn  
       * Mandatory: True  
       * Type: string  
-      * Label: Klass url  
-      * Description: The url to KLASS codelist.  
+      * Label: Klass urn  
+      * Description: The urn to KLASS codelist  
 
 #### EnvironmentChange  
 _A requirement for change  that originates from a change in the operating environment of the statistical organization._  
@@ -356,20 +360,32 @@ _An outline of a need for new information required for a particular purpose._
 _The use of a Represented Variable within a Data Set. It may include information about the source of the data._  
   * Inherit: 
     * **IdentifiableArtefact** 
-  * representedVariable  
-      * Mandatory: True  
+  * representedVariable?  
+      * Mandatory: False  
       * Link to: *_RepresentedVariable_*  
       * Label: Represented variable  
-  * population  
-      * Mandatory: True  
+  * valuation?  
+      * Mandatory: False  
+      * Type: string  
+      * Enum: ['SENSITIVE', 'SHIELDED', 'INTERNAL', 'OPEN']  
+      * Label: Valuation  
+      * Description: Classification of the value or damage potential of a dataset  
+  * population?  
+      * Mandatory: False  
       * Link to: *_Population_*  
       * Label: Population  
   * dataStructureComponentType  
       * Mandatory: True  
       * Type: string  
-      * Enum: ['IDENTIFIER', 'MEASURE', 'ATTRIBUTE']  
+      * Enum: ['IDENTIFIER', 'MEASURE', 'ATTRIBUTE', 'START_TIME', 'STOP_TIME']  
       * Label: Data Structure Component Type  
       * Description: The data structure component type (identifier, measure or attribute) of the instance variable.  
+  * temporalityType?  
+      * Mandatory: False  
+      * Type: string  
+      * Enum: ['EVENT', 'STATUS', 'ACCUMULATED', 'FIXED']  
+      * Label: Temporality type  
+      * Description: Instance variable temporality type  
   * sentinelValueDomain?  
       * Mandatory: False  
       * Link to: *_EnumeratedValueDomain, DescribedValueDomain_*  
@@ -379,28 +395,12 @@ _The use of a Represented Variable within a Data Set. It may include information
       * Type: string  
       * Label: Format  
       * Description: This attribute describes the data-format of the instance variable. For example a date-format-mask.  
-  * identifierComponentIsUnique?  
-      * Mandatory: False  
-      * Type: boolean  
-      * Label: Identifier component is unique  
-      * Description: For INDENTIFIER-components. Indicates if the key is unique.  
-  * identifierComponentIsComposite?  
-      * Mandatory: False  
-      * Type: boolean  
-      * Label: Identifier component is composite  
-      * Description: For INDENTIFIER-components. Indicates if the key is composite, e.g. person-identifier and date/time.  
-  * dataStructureComponentRole?  
-      * Mandatory: False  
-      * Type: string  
-      * Enum: ['ENTITY', 'IDENTITY', 'COUNT', 'TIME', 'GEO']  
-      * Label: Data structure component role  
-      * Description: For INDENTIFIER-components or MEASURE-components. Specifies the type of role --> "entity", "count", "time", "geography" or "identity" (only INDENTIFIER-components).  
   * geoType?  
       * Mandatory: False  
       * Type: string  
-      * Enum: ['POINT', 'POLYGON', 'LINE']  
+      * Enum: ['POINT', 'POLYGON', 'LINE', 'ADMINISTRATIVE_LEVEL']  
       * Label: Geo type  
-      * Description: If the component is a geolocation (dataStructureComponentRole is GEO) then there are different types  
+      * Description: If the component is a geolocation then there are different types  
   * mandatory?  
       * Mandatory: False  
       * Type: boolean  
@@ -567,19 +567,19 @@ _The total membership of a defined class of people, objects or events._
   * Inherit: 
     * **IdentifiableArtefact** 
     * **Concept** 
-  * populationType  
-      * Mandatory: True  
+  * populationType?  
+      * Mandatory: False  
       * Type: string  
-      * Enum: ['TARGET', 'SURVEY']  
+      * Enum: ['TARGET', 'SURVEY', 'FRAME']  
       * Label: Population type  
       * Description: The type og pupulation.  
-  * referencePeriodStartDate  
-      * Mandatory: True  
+  * referencePeriodStartDate?  
+      * Mandatory: False  
       * Type: datetime  
       * Label: Reference period start date  
       * Description: The time period to which the population is associated.  
-  * referencePeriodEndDate  
-      * Mandatory: True  
+  * referencePeriodEndDate?  
+      * Mandatory: False  
       * Type: datetime  
       * Label: Reference period end date  
       * Description: The time period to which the population is associated.  
@@ -939,6 +939,14 @@ _A combination of a characteristic of a population to be measured and how that m
       * Mandatory: True  
       * Link to: *_Universe_*  
       * Label: Universe  
+  * unitType?  
+      * Mandatory: False  
+      * Link to: *_UnitType_*  
+      * Label: Unit type  
+  * subjectFields?  
+      * Mandatory: False  
+      * Link to: *_SubjectField_*  
+      * Label: Subject fields  
   * substantiveValueDomain?  
       * Mandatory: False  
       * Link to: *_EnumeratedValueDomain, DescribedValueDomain_*  
@@ -1160,6 +1168,10 @@ _A program which is not related to the post-design cyclic production of statisti
 _One or more Concept Systems used for the grouping of Concepts and Categories for the production of statistics._  
   * Inherit: 
     * **IdentifiableArtefact** 
+  * parentSubjectField?  
+      * Mandatory: False  
+      * Link to: *_SubjectField_*  
+      * Label: Parent subject field  
 
 #### TransformableInput  
 _A type of Process Input whose content goes into a Process Step and is changed in some way by the execution of that Process Step. Some or all of the content will be represented in the Transformed Output._  
@@ -1211,12 +1223,6 @@ _A Unit Type is a class of objects of interest_
   * Inherit: 
     * **IdentifiableArtefact** 
     * **Concept** 
-  * typeOfStatisticalUnit  
-      * Mandatory: True  
-      * Type: string  
-      * Enum: ['ENTERPRISE', 'ESTABLISHMENT', 'PERSON', 'FAMILY', 'HOUSEHOLD', 'SHAREHOLDER', 'MUNICIPALITY', 'NOT_APPLICABLE']  
-      * Label: Type of statistical unit  
-      * Description: Type of unit.  
   * parentUnitTypes?  
       * Mandatory: False  
       * Link to: *_UnitType_*  
@@ -1291,21 +1297,21 @@ _An organized collection of data._
   * dataSetState  
       * Mandatory: True  
       * Type: string  
-      * Enum: ['RAW_DATA', 'INPUT_DATA', 'PROCESSED_DATA', 'OUTPUT_DATA', 'DATA_PRODUCT', 'OTHER_DATA']  
+      * Enum: ['RAW_DATA', 'INPUT_DATA', 'PROCESSED_DATA', 'OUTPUT_DATA', 'DATA_PRODUCT', 'OTHER_DATA', 'ARCHIVED_DATA', 'TEMP']  
       * Label: Data set state  
       * Description: The type of "steady state" for the dataset.  
-  * temporalityType?  
-      * Mandatory: False  
-      * Type: string  
-      * Enum: ['EVENT', 'STATUS', 'ACCUMULATED', 'FIXED']  
-      * Label: Temporality type  
-      * Description: Dataset temporality  
-  * valuation?  
-      * Mandatory: False  
+  * valuation  
+      * Mandatory: True  
       * Type: string  
       * Enum: ['SENSITIVE', 'SHIELDED', 'INTERNAL', 'OPEN']  
       * Label: Valuation  
       * Description: Classification of the value or damage potential of a dataset  
+  * temporalityType?  
+      * Mandatory: False  
+      * Type: string  
+      * Enum: ['EVENT', 'STATUS']  
+      * Label: Temporality type  
+      * Description: Dataset temporality  
   * dataExistsFromDate?  
       * Mandatory: False  
       * Type: datetime  
